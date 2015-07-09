@@ -62,7 +62,7 @@ user_response = Faraday.get "https://api.github.com/user",
     'Accept' => 'application/json'}
 ```
 
-Parse the response body using JSON, and save the username to `session[:username]`.
+Parse the response body using JSON, and save the username to `session[:username]`. Finally, redirect back to '/'.
 
 ## Instructions
 
@@ -70,4 +70,4 @@ Parse the response body using JSON, and save the username to `session[:username]
 
 2. On the repositories `index` page, display a list of the current user's repositories. Displaying only the first page of results is fine; feel free to tackle pagination as a bonus.
 
-3. Implement the `create` action in your `RepositoriesController` so that the form on `index.html.erb` successfully creates a new repository for the current user. The form input should be the name of the new repository.
+3. Implement the `create` action in your `RepositoriesController` so that the form on `index.html.erb` successfully creates a new repository for the current user. The form input should be the name of the new repository. Redirect back to '/'. (HINT: Your parameters hash should be passed in as JSON. How can you accomplish this? Can you think of a method that will convert a hash to JSON?)
