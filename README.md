@@ -2,7 +2,7 @@
 
 ## Instructions
 
-1. Follow [this tutorial](/web-auth-readme) to implement authentication with the GitHub API. Display the current user's username on the `index` page in a heading.
+1. Follow [this tutorial](https://github.com/learn-co-curriculum/web-auth-readme) to implement authentication with the GitHub API. Display the current user's username on the `index` page in a heading.
 
 2. On the repositories `index` page, display a list of the current user's repositories. Displaying only the first page of results is fine; feel free to tackle pagination as a bonus.
 
