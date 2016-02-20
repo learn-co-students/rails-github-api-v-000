@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
 
   skip_before_action :authenticate_user, only: :create
 
-  skip_before_action :authenticate_user, only: :create
-
   def create
     resp = Faraday.post("https://github.com/login/oauth/access_token") do |req|
       req['client_id'] = ENV['GITHUB_CLIENT_ID']
@@ -12,7 +10,7 @@ class SessionsController < ApplicationController
       req['Accept'] = 'application/json'
     end
     access = JSON.parse(resp.body)
-    # binding.pry
+    #binding.pry
     session[:token] = access["access_token"]
 
     user_resp = Faraday.get("https://api.github.com/user") do |req|
