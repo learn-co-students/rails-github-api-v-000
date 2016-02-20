@@ -1,13 +1,11 @@
 <div class = "container">
   <h1>Repos</h1>
   <%= session[:username] %>
-  <ul>
-    <% @repos_array.each do |repo| %>
-      <li><%= repo %></li>
+  <ol>
+    <% @repos.each do |repo| %>
+      <li><%= repo['name'] %></li>
     <% end %>
-  </ul>
-
-
+  </ol>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
