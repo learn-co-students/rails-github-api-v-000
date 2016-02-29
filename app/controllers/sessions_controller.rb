@@ -1,6 +1,5 @@
 
 class SessionsController < ApplicationController
-
   skip_before_action :authenticate_user, only: :create
 
   def create
@@ -10,16 +9,14 @@ class SessionsController < ApplicationController
       req['code'] = (params[:code])
       req['Accept'] = 'application/json'
     end
-    body = JSON.parse(resp.body)
-    #binding.pry
-    session[:token] = body["access_token"]
 
-    user_resp = Faraday.get("https://api.github.com/user") do |req|
-      req['Authorization'] = "token #{session[:token]}"
-      req['Accept'] = 'application/json'
-    end
-    user_parse = JSON.parse(user_resp.body)
-    session[:username] = user_parse["login"]
+    hash = JSON.parse(resp.body)
+    session[:token] = hash["access_token"]
+
+    user_resp = Faraday.get "https://api.github.com/user", {}, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+
+    user_body = JSON.parse(user_resp.body)
+    session[:username] = user_body["login"]
 
     redirect_to '/'
   end
