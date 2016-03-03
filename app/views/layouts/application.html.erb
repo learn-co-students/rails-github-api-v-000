@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <% if !!session[:token] %>
+    <%= link_to 'Logout', logout_path %>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>
