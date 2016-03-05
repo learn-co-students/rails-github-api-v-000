@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1><%= @body.first['owner']['login'] %></h1>
+  <h1><%= session[:username] %></h1>
   <h3>Repos</h3>
   <ul>
     <% @body.each do |repo| %>
