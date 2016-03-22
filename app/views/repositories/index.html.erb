@@ -1,15 +1,12 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
+  <%= @username %>
   
-  
-  <% if @repos %>
-    <h2><%= @repos[0]["owner"]["login"] %></h2>
+  <% @repos.each do |repo| %>
+    <li><%= repo["name"] %></li> 
+  <% end %>
 
-    <% @repos.each do |repo| %>
-      <li><%= repo["name"] %></li> 
-    <% end %>
-  <% end %>  
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
