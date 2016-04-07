@@ -7,6 +7,7 @@ class RepositoriesController < ApplicationController
       req.headers['Accept'] = 'application/json'
       req.headers['Authorization'] = "token #{session[:token]}"
     end
+    binding.pry
     @repos = JSON.parse(resp.body)
   end
 
