@@ -7,6 +7,7 @@ describe "authentication" do
   end
 end
 
+
 describe "visiting root" do
   before :each do
     page.set_rack_session(:token => "1")
