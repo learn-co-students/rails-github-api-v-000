@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1>Repos</h1>
+  <h1><%= auth_user_json['login'] %> Repos</h1>
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
