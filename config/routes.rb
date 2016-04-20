@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get '/auth' => 'sessions#create'
-  get '/destroy' => 'sessions#destroy'
   post '/repositories/create' => 'repositories#create'
   root 'repositories#index'
   # get '/repositories', to: 'repositories#index'
