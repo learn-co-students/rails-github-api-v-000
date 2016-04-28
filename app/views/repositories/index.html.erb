@@ -1,5 +1,6 @@
 <div class = "container">
   <h1>Repos</h1>
+  <%= @user_name if @user_name %>
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
@@ -8,3 +9,9 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+
+  <%if @user_repos%>
+    <% @user_repos.each do |r|%>
+      <p><%= r['name'] %></p>
+    <% end %>
+  <%end%>
