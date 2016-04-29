@@ -8,8 +8,9 @@ class RepositoriesController < ApplicationController
   end
 
   def create
-    resp = Faraday.post("https://api.github.com/user?access_token=#{session[:token]}/repos") do |req|
+    resp = Faraday.post("https://api.github.com/user/repos") do |req|
       req.params['name'] = params[:name]
+      req.headers['Authorization'] = session[:token]
     end
     redirect_to root_path
   end
