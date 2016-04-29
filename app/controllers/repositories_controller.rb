@@ -12,6 +12,7 @@ class RepositoriesController < ApplicationController
       req.params['name'] = params[:name]
       req.headers['Authorization'] = session[:token]
     end
+    binding.pry
     redirect_to root_path
   end
 end
