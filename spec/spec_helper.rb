@@ -30,17 +30,16 @@ RSpec.configure do |config|
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
 
-    stub_request(:post, "https://github.com/login/oauth/access_token?client_id=0d15c6e5fb2d920ee4f6&client_secret=3b49c26f59d366bf9a42895c4f412f0aa371710a&code=20&redirect_uri=http://localhost:3000/auth").
-         with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Length'=>'0', 'User-Agent'=>'Faraday v0.9.2'}).
+    stub_request(:post, "https://api.github.com/user/repos").
+         with(:body => {"{\"name\":\"a-new-repo\"}"=>nil},
+              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'token 1', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Faraday v0.9.2'}).
          to_return(:status => 200, :body => "", :headers => {})
 
-    stub_request(:get, "https://api.github.com/user/repos?access_token=1").
-         with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.2'}).
+    stub_request(:post, "https://github.com/login/oauth/access_token").
+         with(:body => {"{\"client_id\":\"0d15c6e5fb2d920ee4f6\",\"client_secret\":\"3b49c26f59d366bf9a42895c4f412f0aa371710a\",\"code\":\"20\"}"=>nil},
+              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Faraday v0.9.2'}).
          to_return(:status => 200, :body => "", :headers => {})
 
-    stub_request(:get, "https://api.github.com/user/repos?access_token=1").
-         with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.2'}).
-         to_return(:status => 200, :body => "", :headers => {})
 
   end
 end

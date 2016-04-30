@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1><%= @username %>'s Repos: </h1>
+  <h1><%= session[:username] %>'s Repos: </h1>
   <% @repos.each do |repo| %>
     <%= repo["name"] %>
     <a href=<%= repo["html_url"] %>><%= repo["html_url"] %></a>
