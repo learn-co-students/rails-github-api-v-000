@@ -1,6 +1,10 @@
 <div class = "container">
   <h1>Repos</h1>
 
+  <% if @error %>
+    <%= @error %>
+  <% end %>
+
   <% if @repos %>
     <h2>All your repositories, <%= @user %>:</h2>
     <% @repos.each do |r| %>
