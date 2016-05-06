@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_user, only: :create  
 
   def create
-byebug
     gh_id=ENV['GITHUB_CLIENT']
     gh_secret=ENV['GITHUB_SECRET']
     resp = Faraday.post "https://github.com/login/oauth/access_token" do |req|
@@ -12,7 +11,6 @@ byebug
                     'code': params[:code], 
                     }   
     end
-byebug
 
     body = JSON.parse(resp.body)
 

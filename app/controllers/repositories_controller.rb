@@ -5,20 +5,20 @@ class RepositoriesController < ApplicationController
   before_action :set_user
 
   def index
+
     resp = Faraday.get "https://api.github.com/user/repos" do |req|
       req.headers["Authorization"] = "token " + session[:token]
-      req.params["sort"] = "created"
+      # req.params["sort"] = "created"
     end
 
     @repos=JSON.parse(resp.body)
   end
 
   def create
-    build_data
 
     create_resp = Faraday.post "https://api.github.com/user/repos" do |req|
       req.headers["Authorization"] = "token " + session[:token]
-      req.body = @data.to_json
+      req.body = @data
     end
 
     new_repo=JSON.parse(create_resp.body)
@@ -29,9 +29,11 @@ class RepositoriesController < ApplicationController
   private
 
     def build_data
-      @data={
+      data={
         "name": params[:name]
       }
+      @data=data.to_json
+
     end
 
     def set_user
