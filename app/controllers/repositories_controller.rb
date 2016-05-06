@@ -15,14 +15,14 @@ class RepositoriesController < ApplicationController
   end
 
   def create
-# byebug
+
     create_resp = Faraday.post "https://api.github.com/user/repos" do |req|
       req.headers["Authorization"] = "token " + session[:token]
-      req.headers['Accept']='application/json'
+      # req.headers['Accept']='application/json'
       req.body = { name: params[:name]}.to_json
     end
-byebug
-    body=JSON.parse(create_resp.body)
+
+    # body=JSON.parse(create_resp.body)
     if create_resp.success?
       redirect_to '/'
     else
