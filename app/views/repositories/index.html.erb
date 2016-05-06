@@ -2,7 +2,7 @@
   <h1>Repos</h1>
 
   <% if @repos %>
-    <h2>All your repositories:</h2>
+    <h2>All your repositories, <%= @user %>:</h2>
     <% @repos.each do |r| %>
       <p><%=r["name"]%></p>
     <% end %>

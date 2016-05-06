@@ -17,12 +17,12 @@ class SessionsController < ApplicationController
     body = JSON.parse(resp.body)
     session[:token] = body["access_token"]
 #   byebug
-#     user_hash = Faraday.get "https://api.github.com/user" do |req|
-#       req.headers['Authorization'] = "token " + session[:token]
-#     end
+    user_hash = Faraday.get "https://api.github.com/user" do |req|
+      req.headers['Authorization'] = "token " + session[:token]
+    end
 
-#     session[:username]=user_hash["login"]
-# # byebug
+    session[:current_user]=JSON.parse(user_hash.body)["login"]
+ # byebug
 #     @user=session[:username]
     redirect_to repositories_path
 
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
 
 
   def destroy
-byebug
+# byebug
     session[:token]=nil
     # authenticate_user
     # redirect_to root_path
