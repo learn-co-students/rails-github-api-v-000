@@ -2,7 +2,8 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_user, only: :create  
 
   def create
-byebug
+
+# byebug
     gh_id=ENV['GITHUB_ID']
     gh_secret=ENV['GITHUB_SECRET']
     resp = Faraday.post "https://github.com/login/oauth/access_token" do |req|
@@ -12,10 +13,27 @@ byebug
                     'code': params[:code], 
                     }   
     end
-byebug
+# byebug
     body = JSON.parse(resp.body)
     session[:token] = body["access_token"]
-    redirect_to root_path
+#   byebug
+#     user_hash = Faraday.get "https://api.github.com/user" do |req|
+#       req.headers['Authorization'] = "token " + session[:token]
+#     end
 
+#     session[:username]=user_hash["login"]
+# # byebug
+#     @user=session[:username]
+    redirect_to repositories_path
+
+  end
+
+
+  def destroy
+byebug
+    session[:token]=nil
+    # authenticate_user
+    # redirect_to root_path
+    render 'sessions/create'
   end
 end
