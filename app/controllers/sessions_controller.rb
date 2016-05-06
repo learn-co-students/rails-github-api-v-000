@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
 
 
   def destroy
-    session[:token]=nil
+    session.clear
     render 'sessions/create'
   end
 end

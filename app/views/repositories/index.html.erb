@@ -1,8 +1,10 @@
 <div class = "container">
   <h1>Repos</h1>
 
-  <% if @error %>
-    <%= @error %>
+  <% if @errors %>
+    <% @errors.each do |e| %>
+      <%= e["message"] %>
+    <% end %>
   <% end %>
 
   <% if @repos %>
