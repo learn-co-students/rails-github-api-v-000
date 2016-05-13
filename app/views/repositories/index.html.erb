@@ -1,7 +1,12 @@
 <div class = "container">
   <h1>Repos</h1>
-  <!-- List repositories here! -->
-
+  <% if @repos_array.any? %>
+  <ul>
+    <% @repos_array.each do |repo| %>
+      <li><%= link_to repo["name"], repo["html_url"] %></li>
+    <% end %>
+  </ul>
+  <% end %>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
