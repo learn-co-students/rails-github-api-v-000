@@ -29,6 +29,21 @@ RSpec.configure do |config|
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
+
+      stub_request(:post, "https://github.com/login/oauth/access_token").
+  with(:body => {"client_id"=>"", "client_secret"=>"", "code"=>"20"},
+       :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby'}).
+  to_return(:status => 200, :body => "", :headers => {})
+
+  stub_request(:post, "https://api.github.com/user/repos").
+    with(:body => {"{\"name\":\"a-new-repo\"}"=>nil},
+         :headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'token 1', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby'}).
+    to_return(:status => 200, :body => "", :headers => {})
+
+    stub_request(:post, "https://github.com/login/oauth/access_token").
+         with(:body => {"client_id"=>"669b2418011b37e3e659", "client_secret"=>"4d360e47b0222b46d2469bf1e1870117c4174ee7", "code"=>"20"},
+              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby'}).
+         to_return(:status => 200, :body => "", :headers => {})
   end
 end
 
