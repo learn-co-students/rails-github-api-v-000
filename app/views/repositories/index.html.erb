@@ -10,7 +10,8 @@
   <% if @repos && @repos.length > 0 %>
     <ul>
       <% @repos.each do |repo| %>
-        <li><%= link_to repo["name"]%></li>
+        <li><a href = "<%= repo['html_url'] %>"><%= repo["name"] %></a></li>
+
       <% end %>
     </ul>
   <% end %>
