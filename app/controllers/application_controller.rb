@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     
 
   def logged_in?
-    !!session[:token] && !!session[:username]
+    !!session[:token]
   end
 
 end

@@ -2,7 +2,7 @@
 <h4>Logged in as <%= session[:username] %></h4>
   <h1>Repos</h1>
   <!-- List repositories here! -->
-  <% @repos.each do |repo| %>
+  <% @repos_array.each do |repo| %>
     <%= repo['name'] %>
   <% end %>
 
