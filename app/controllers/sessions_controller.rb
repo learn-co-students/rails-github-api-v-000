@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
     #raise user_response.inspect
     user_json = JSON.parse(user_response.body)
     #raise user_json.inspect
-    session[:username] = user_json[:login]
-
+    session[:username] = user_json["login"]
+    
     redirect_to root_path
   end
 
