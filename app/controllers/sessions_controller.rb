@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     #raise user_json.inspect
     session[:username] = user_json["login"]
     
-    redirect_to root_path
+    redirect_to '/'
   end
 
 end
