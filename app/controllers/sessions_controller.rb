@@ -1,9 +1,8 @@
 class SessionsController < ApplicationController
-	skip_before_action :authenticate_user, only: :create
-	
-  def create
+  skip_before_action :authenticate_user, only: :create
 
-  	 response = Faraday.post "https://github.com/login/oauth/access_token", {client_id: '3bd3d9b0a2510cbdfbab', client_secret: '2d7ee3a80b282132e5ef6f949b43d7e1baa763b4',code: params[:code]}, {'Accept' => 'application/json'}
+  def create
+    response = Faraday.post "https://github.com/login/oauth/access_token", {client_id: 'fe4dc507059a4f11ec02', client_secret: 'f91ec5b3428d66d4785514787b8fe1127c628425',code: params[:code]}, {'Accept' => 'application/json'}
     access_hash = JSON.parse(response.body)
     session[:token] = access_hash["access_token"]
 
