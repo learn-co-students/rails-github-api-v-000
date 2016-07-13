@@ -17,7 +17,7 @@ RSpec.configure do |config|
       to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
 
     stub_request(:post, "https://github.com/login/oauth/access_token").
-      with(:body => {"client_id"=> ENV["GITHUB_CLIENT"], "client_secret"=> ENV["GITHUB_SECRET"], "code"=>"20"},
+      with(:body => {"client_id"=> ENV["GITHUB_KEY"], "client_secret"=> ENV["GITHUB_SECRET"], "code"=>"20"},
       :headers => {'Accept'=>'application/json'}).
       to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
@@ -29,6 +29,10 @@ RSpec.configure do |config|
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
+
+      stub_request(:post, "https://github.com/login/oauth/access_token?client_id=c682f554b70499211e0b&client_secret=dbf8e211e1abc5eb584acf67ab0c10cc56f3eed2&code=20&redirect_uri=http://localhost:3000/auth").
+         with(:headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Length'=>'0', 'User-Agent'=>'Faraday v0.9.1'}).
+         to_return(:status => 200, :body => "Fake data", :headers => {})
   end
 end
 

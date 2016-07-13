@@ -1,3 +1,9 @@
+<% if session[:user]%>
+  <div class="">
+    <h1>Welcome <%= session[:user]%></h1>
+  </div>
+<%end%>
+
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
@@ -8,3 +14,15 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+<% if @user_repos %>
+<%@user_repos.each do |repo| %>
+<div class="user_repos contianer-fluid">
+  <ul>
+    <li><strong>Owner: <%= repo['owner'] %></strong></li>
+          <%= link_to repo['name'], repo['url'] %>
+          <br>
+
+  </ul>
+</div>
+<% end %>
+<% end %>
