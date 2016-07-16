@@ -1,7 +1,9 @@
 <div class = "container">
+  Currently Logged In as: <%=current_user%>
   <h1>Repos</h1>
-  <!-- List repositories here! -->
-
+  <%@repos.each do |repo|%>
+  <li><%=repo["name"]%></li> <br>
+  <%end%>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
