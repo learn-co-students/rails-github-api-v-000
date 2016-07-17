@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user
-  helper_method :current_user, :logged_in?
+  helper_method :logged_in?
 
   private
 
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-      @current_user ||= JSON.parse(Faraday.get("https://api.github.com/user") do |req|
+      session[:username]= JSON.parse(Faraday.get("https://api.github.com/user") do |req|
           req.params['oauth_token'] = session[:token]
         end.body)["login"]
     end

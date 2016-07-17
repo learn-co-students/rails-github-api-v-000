@@ -1,5 +1,8 @@
 <div class = "container">
-  Currently Logged In as: <%=current_user%>
+  <header>
+    Currently Logged In as: <%=session[:username]%>
+
+  </header>
   <h1>Repos</h1>
   <%@repos.each do |repo|%>
   <li><%=repo["name"]%></li> <br>
