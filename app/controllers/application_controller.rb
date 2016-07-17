@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
     def current_user
       session[:username]= JSON.parse(Faraday.get("https://api.github.com/user") do |req|
-          req.params['oauth_token'] = session[:token]
+          req.headers['Authorization'] = "token #{session[:token]}"
         end.body)["login"]
     end
 end

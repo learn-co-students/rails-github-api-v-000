@@ -2,12 +2,15 @@
   <header>
     Currently Logged In as:
     <%if @username%>
+    <%binding.pry%>
     <%=@username%>
     <%end%>
   </header>
   <h1>Repos</h1>
-  <%@repos.each do |repo|%>
-  <li><%=repo["name"]%></li> <br>
+  <%if @repos%>
+    <%@repos.each do |repo|%>
+    <li><%=repo["name"]%></li> <br>
+    <%end%>
   <%end%>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
