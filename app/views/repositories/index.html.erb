@@ -1,7 +1,10 @@
 <div class = "container">
   <header>
-    Currently Logged In as: <%=session[:username]%>
-
+    Currently Logged In as:
+      <%binding.pry%>
+    <%if @username%>
+    <%=@username%>
+    <%end%>
   </header>
   <h1>Repos</h1>
   <%@repos.each do |repo|%>
