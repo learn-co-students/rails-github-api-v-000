@@ -1,6 +1,6 @@
 <div class = "container">
-  <%= @name %>
-  <h1>Repos</h1>
+
+  <h1><%= session[:username] %>'s Repos</h1>
   <% @body.each do |x| %>
   <%= x['name'] %>
   <% end %>
