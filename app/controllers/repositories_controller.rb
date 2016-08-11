@@ -15,7 +15,7 @@ class RepositoriesController < ApplicationController
       req.params['name'] = params[:name].to_json
     end
     raise response.inspect
-    redirect_to root_path
+    redirect_to '/'
   end
 
 end

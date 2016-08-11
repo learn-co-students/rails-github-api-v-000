@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
       req["Accept"] = "application/json"
       req.params['code'] = params[:code]
-      req.params['client_id'] = ENV['GITHUB_CLIENT_ID']
+      req.params['client_id'] = ENV['GITHUB_CLIENT']
       req.params['client_secret'] = ENV['GITHUB_SECRET']
       req.params['grant_type'] = "authorization_code"
     end
