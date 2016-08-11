@@ -5,13 +5,7 @@ class SessionsController < ApplicationController
     # session.destroy
     # raise session.inspect
 
-    response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
-      req["Accept"] = "application/json"
-      req.params['code'] = params[:code]
-      req.params['client_id'] = ENV['GITHUB_CLIENT']
-      req.params['client_secret'] = ENV['GITHUB_SECRET']
-      req.params['grant_type'] = "authorization_code"
-    end
+    response = Faraday.post "https://github.com/login/oauth/access_token", {client_id: ENV["GITHUB_CLIENT"], client_secret: ENV["GITHUB_SECRET"], code: params[:code]}, {'Accept' => 'application/json'}
 
     body = JSON.parse(response.body)
     session[:token] = body["access_token"]
