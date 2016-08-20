@@ -1,7 +1,6 @@
 class RepositoriesController < ApplicationController
   def index
     resp = Faraday.get("https://api.github.com/user") do |req|
-      # need to show current user's repositories based on oauth token's scope
       req.headers['authorization'] = "token #{session[:token]}"
       req.headers['accept']        = 'application/json'
     end
@@ -20,16 +19,12 @@ class RepositoriesController < ApplicationController
   end
 
   def create
-    resp = Faraday.get("https://api.github.com/users") do |req|
-      # need to show current user's repositories based on oauth token's scope
-
-      req.params['oauth_token'] = session[:token]
-      # hoping to grab params from form in index view below
-      req.params['repo']        = params[:name]
+    resp = Faraday.post("https://api.github.com/user/repos") do |req|
+      req.headers['authorization'] = "token #{session[:token]}"
+      req.body                     = {name: params[:name]}.to_json
     end
-    binding.pry
 
-    @repositories = JSON.parse(resp.body)#["response"]["repos"]
+    @repositories = JSON.parse(resp.body)
     
     redirect_to root_path
   end
