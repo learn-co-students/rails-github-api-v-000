@@ -1,11 +1,11 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
+  <h3>User: <%= @user %></h3>
   <% if @repositories %>
     <ul>
     <% @repositories.each do |repository| %>
-    <% binding.pry %>
-      <li><%= "#{repository["elements_wanted_here"]}" %></li>
+      <li><%= "#{repository['name']}" %></li>
     <% end %>
     </ul>
   <% end %>
