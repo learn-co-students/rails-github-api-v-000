@@ -10,12 +10,16 @@ class RepositoriesController < ApplicationController
     @url  = resp['repos_url']
 
     repos = Faraday.get(@url) do |req|
+      req.params['page']           = '5'
+      req.params['per_page']       = '5'
       req.headers['authorization'] = "token #{session[:token]}"
       req.headers['accept']        = 'application/json'
     end
 
-    @repositories = JSON.parse(repos.body)
+    @links        = repos.to_hash[:response_headers]["link"]
 
+    @links        = @links.delete('\\"').split(',')
+    @repositories = JSON.parse(repos.body)
   end
 
   def create
@@ -28,4 +32,5 @@ class RepositoriesController < ApplicationController
     
     redirect_to root_path
   end
+
 end

@@ -2,6 +2,12 @@
   <h1>Repos</h1>
   <!-- List repositories here! -->
   <h3>User: <%= @user %></h3>
+
+  <%= @links.each_with_index do |link, index| %>
+        
+  <% end %>
+
+  <div class="well">
   <% if @repositories %>
     <ul>
     <% @repositories.each do |repository| %>
@@ -9,6 +15,7 @@
     <% end %>
     </ul>
   <% end %>
+  </div>
   
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
