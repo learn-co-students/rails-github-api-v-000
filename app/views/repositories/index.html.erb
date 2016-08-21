@@ -1,11 +1,7 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
-  <h3>User: <%= @user %></h3>
-
-  <%= @links.each_with_index do |link, index| %>
-        
-  <% end %>
+  <h1><%= session[:username] %></h1>
 
   <div class="well">
   <% if @repositories %>
