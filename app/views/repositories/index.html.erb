@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1>Repos for <%= @user %></h1>
+  <h1>Repos for <%= session[:username] %></h1>
   <!-- List repositories here! -->
   <ul>
   <% @repos.each do |repo| %>
