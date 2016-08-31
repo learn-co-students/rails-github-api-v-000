@@ -1,10 +1,29 @@
 <div class = "container">
-  <h1>Repos</h1>
-  <!-- List repositories here! -->
 
-  <%= form_tag("/repositories/create", method: "post") do %>
-    <%= label_tag(:name, "Create a New Repo:") %>
-    <%= text_field_tag(:name, nil, id: "new-repo") %>
-    <%= submit_tag("Create") %>
-  <% end %>
+  <div class="col-xs-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h1>Repos for <%= session[:username] %></h1></div>
+      <div class="panel-body">
+        <% @repos.each do |repo| %>
+          <div class="well">
+            <h5>Repo Name: <%= repo["name"] %></h5>
+            <p>Url: <%= link_to repo["html_url"], repo["html_url"] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Create Repos</div>
+      <div class="panel-body">
+        <%= form_tag("/repositories/create", method: "post") do %>
+          <%= label_tag(:name, "Create a New Repo:") %> <br></br>
+          <%= text_field_tag(:name, nil, id: "new-repo") %>
+          <%= submit_tag("Create") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
