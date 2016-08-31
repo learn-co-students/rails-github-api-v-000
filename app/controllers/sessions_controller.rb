@@ -13,8 +13,6 @@ class SessionsController < ApplicationController
     }, {
       Accept: 'application/json'
     }
-
-
     body = JSON.parse(resp.body)
     session[:token] = body['access_token']
 
