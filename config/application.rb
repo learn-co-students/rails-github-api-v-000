@@ -10,7 +10,7 @@ module GithubDemo
   class Application < Rails::Application
     Dotenv::Railtie.load
 
-    GITHUB_CLIENT_ID = ENV['GITHUB_CLIENT_ID']
+    GITHUB_CLIENT = ENV['GITHUB_CLIENT']
     GITHUB_SECRET = ENV['GITHUB_SECRET']
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
