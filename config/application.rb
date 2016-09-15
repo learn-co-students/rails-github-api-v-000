@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module GithubDemo
   class Application < Rails::Application
+    Dotenv::Railtie.load
+
+    GITHUB_CLIENT_ID = ENV['GITHUB_CLIENT_ID']
+    GITHUB_SECRET = ENV['GITHUB_SECRET']
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
