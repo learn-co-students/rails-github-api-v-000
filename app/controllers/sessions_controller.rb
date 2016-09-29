@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
 
   def create
     response = Faraday.post('https://github.com/login/oauth/access_token') do |req|
-      req.params[:client_id] = ENV['GITHUB_CLIENT_ID']
-      req.params[:client_secret] = ENV['GITHUB_CLIENT_SECRET']
+      req.params[:client_id] = ENV['GITHUB_CLIENT']
+      req.params[:client_secret] = ENV['GITHUB_SECRET']
       req.params[:code] = params[:code]
       req.headers['Accept'] = 'application/json'
     end
