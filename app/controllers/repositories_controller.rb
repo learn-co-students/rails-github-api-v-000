@@ -9,9 +9,9 @@ class RepositoriesController < ApplicationController
   def create
     resp = Faraday.post("https://api.github.com/user/repos") do |req|
       req.params['access_token'] = session[:token]
-      req.params['name'] = params[:name]
+      req.body = {name: "#{params[:name]}"}.to_json
     end
-    binding.pry
+    redirect_to root_path
   end
 
   private
@@ -27,7 +27,8 @@ class RepositoriesController < ApplicationController
   def get_repos
     resp = Faraday.get("https://api.github.com/user/repos") do |req|
       req.params['access_token'] = session[:token]
+      req.params['sort'] = "created"
     end
-    @repos = JSON.parse(resp.body)
+    @repos = JSON.parse(resp.body).map{|repo| repo["name"]}
   end
 end
