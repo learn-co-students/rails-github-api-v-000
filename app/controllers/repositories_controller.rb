@@ -10,7 +10,6 @@ class RepositoriesController < ApplicationController
     resp = Faraday.post("https://api.github.com/user/repos") do |req|
       req.params['access_token'] = session[:token]
       req.params['name'] = params[:name]
-      # req.params['score'] = 'public_repo'
     end
     binding.pry
   end
@@ -30,6 +29,5 @@ class RepositoriesController < ApplicationController
       req.params['access_token'] = session[:token]
     end
     @repos = JSON.parse(resp.body)
-    # .page(params[:page])
   end
 end
