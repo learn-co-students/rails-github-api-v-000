@@ -1,7 +1,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-
+require 'pry'
 require 'capybara/dsl'
 require 'capybara/rails'
 require 'capybara/rspec'
@@ -26,7 +26,7 @@ RSpec.configure do |config|
       to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
 
     stub_request(:post, "https://api.github.com/user/repos").
-      with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
+      with(:body => {"{\"name\":\"a-new-repo\"}"=>nil},
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
   end

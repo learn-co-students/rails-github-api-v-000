@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1><%= session[:username] %>'s Repos</h1>
+  <h1><%= session[:username] %> Repos</h1>
   <% @repos.each do |repo| %>
     <%= repo["name"] %><br>
   <% end %>
