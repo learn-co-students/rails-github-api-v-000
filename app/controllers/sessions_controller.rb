@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
   def create
   	redirect_uri = 'http://localhost:3000/auth'
   	response = Faraday.get("https://github.com/login/oauth/authorize") do |request|
-  		request.headers = { Authorization: ENV['GITHUB_CLIENT_ID'] }
+  		request.headers = { Authorization: ENV['GITHUB_CLIENT'] }
   		request.params['redirect_uri'] = redirect_uri
   	end
 
   	
   	code = params['code']
   	auth = Faraday.post("https://github.com/login/oauth/access_token") do |request|
-  		request.params['client_id'] = ENV['GITHUB_CLIENT_ID']
+  		request.params['client_id'] = ENV['GITHUB_CLIENT']
   		request.params['client_secret'] = ENV['GITHUB_SECRET']
   		request.params['code'] = code
   		request.params['redirect_uri'] = redirect_uri
