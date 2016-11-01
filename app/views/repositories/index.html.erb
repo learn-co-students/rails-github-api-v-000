@@ -2,9 +2,9 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
-  <% if @repo_names %>
- 	<% @repo_names.each do |repo|%>
-		<p><%=repo%></p>
+  <% if @repo_names != nil   %>
+ 	  <% @repo_names.each do |repo|%>
+		  <p><%=repo%></p>
   	<%end%>
   <%end%>
   <%= form_tag("/repositories/create", method: "post") do %>

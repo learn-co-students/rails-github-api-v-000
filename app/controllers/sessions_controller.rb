@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
   		request.params['redirect_uri'] = redirect_uri
   	end
 
-  	
   	code = params['code']
   	auth = Faraday.post("https://github.com/login/oauth/access_token") do |request|
   		request.params['client_id'] = ENV['GITHUB_CLIENT']
