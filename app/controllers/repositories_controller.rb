@@ -1,12 +1,15 @@
 class RepositoriesController < ApplicationController
   
   def index
+    if logged_in?
+      @user = current_user
+    end
     repos_response  = Faraday.get('https://api.github.com/user/repos') do |req|
         req['authorization'] = "token #{session[:token]}"
     end
     repos_json = JSON.parse(repos_response.body)
     @repo_names = repos_json.collect{|repo| repo['name']}
-    binding.pry
+    # binding.pry
   end
 
   def create
@@ -22,7 +25,7 @@ class RepositoriesController < ApplicationController
         req.headers = { Authorization: "token #{session[:token]}", Accept: 'application/json' }
         req.body = params_json
       end
-      binding.pry
+      # binding.pry
     end
     redirect_to root_path
   end
