@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   		request.params['client_secret'] = ENV['GITHUB_SECRET']
   		request.params['code'] = code
   		request.params['redirect_uri'] = redirect_uri
-      request.headers = { accept: 'application/json' }
+      request.headers = { Accept: 'application/json' }
   	end
 
   	token = JSON.parse(auth.body)['access_token']
