@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Dot-env
+gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -27,8 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
 # Use Faraday for GET and POST
 gem 'faraday'
-# Dot-env
-gem 'dotenv-rails'
+
 
 #Testing
 group :test do
