@@ -1,6 +1,20 @@
 <div class = "container">
+  <%if @response %>
+    <% @response %>
+    <% end %>
+  <h1>User: <%=session[:user]%></h1>
   <h1>Repos</h1>
-  <!-- List repositories here! -->
+  <%if @repos%>
+  <%@repos.each do |repo| %>
+    <div>
+    <%=link_to repo['full_name'], repo['html_url']%><br>
+    language: <%=repo['language']%><br>
+    created at: <%=repo['created_at']%>
+    <br><br>
+    <div>
+    <%end%>
+    <%end%>
+
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
