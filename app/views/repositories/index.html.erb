@@ -1,15 +1,11 @@
 <div class = "container">
-  <h1>Currently Logged in as: <%=current_user.username %></h1>
-  <h1>Repos</h1>
-  <!-- List repositories here! -->
-    <ul>
-    <% @results.each do |item| %>
-        <%= item["name"] %></li></br>
-    <% end %>
-    </ul> 
+  <h1><%= session[:username] %>'s Repos</h1>
+  <% @repos_array.each do |repo| %>
+    <%= repo["name"] %><br>
+  <% end %></br>
 
   <%= form_tag("/repositories/create", method: "post") do %>
-    <%= label_tag(:name, "Create a New Repo:") %>
+    <%= label_tag(:name, "Create a New Repo:") %><br>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
