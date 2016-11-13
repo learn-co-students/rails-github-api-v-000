@@ -2,9 +2,9 @@
   <h1>Hello <%= @user %></h1>
   <h1>Repos</h1>
   <!-- List repositories here! -->
-  <% @repos.each do |repo| %>
+  <% @repos.each.with_index do |repo, i| %>
     <ul>
-      <li><%= repo["name"] %></li>
+    Repo <%= i %>: <%= repo["name"] %>
     </ul>
   <% end %>
   <%= form_tag("/repositories/create", method: "post") do %>
