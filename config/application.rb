@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module GithubDemo
   class Application < Rails::Application
+    ENV['CLIENT_ID'] = 'e47847cc903306341302'
+    ENV['CLIENT_SECRET'] = 'a69126877f2e72e6a4cc6ca7065e101b934f9d5d'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
