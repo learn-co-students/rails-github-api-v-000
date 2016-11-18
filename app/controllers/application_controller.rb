@@ -7,14 +7,14 @@ class ApplicationController < ActionController::Base
   private
     #authenticate to get code (code through http), which leads to session create request to get token
     def authenticate_user
-      # client_id = ENV['CLIENT_ID']
-      # redirect_uri = CGI.escape("http://localhost:3000/auth")
-      # github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}"
-      # redirect_to github_url unless logged_in?
-      redirect_to "https://github.com/login/oauth/authorize?client_id=#{ENV['CLIENT_ID']}&scope=repo" if !logged_in?
+      client_id = ENV['GITHUB_CLIENT']
+      unless logged_in?
+        redirect_to "https://github.com/login/oauth/authorize?client_id=#{client_id}"
+      end
     end
 
     def logged_in?
+      # session[:token] = nil
       !!session[:token]
     end
 end
