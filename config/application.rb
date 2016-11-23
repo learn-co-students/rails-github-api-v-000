@@ -5,6 +5,8 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
+GITHUB = ENV["GITHUB_CLIENT_ID"], ENV["GITHUB_CLIENT_SECRET"]
 
 module GithubDemo
   class Application < Rails::Application
