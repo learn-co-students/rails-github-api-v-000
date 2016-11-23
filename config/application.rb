@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load
-FOURSQUARE = ENV["GITHUB_CLIENT_ID"], ENV["GITHUB_CLIENT_SECRET"]
+GITHUB = ENV["GITHUB_CLIENT_ID"], ENV["GITHUB_CLIENT_SECRET"]
 
 module GithubDemo
   class Application < Rails::Application
