@@ -1,10 +1,12 @@
 <div class = "container">
-  <h1>Repos for <%= session[:username] %></h1>
+  <h1>Repos for <%= session[:username] ? session[:username] : "" %></h1>
   <!-- List repositories here! -->
-  <% i = 1 %>
-  <% @repos.each do |repo| %>
-	<%= raw("<li>Repo #{i.to_s}: #{link_to repo["name"], repo["html_url"]}</li>") %>
-	<% i += 1 %>
+  <% if @repos %>
+	  <% i = 1 %>
+	  <% @repos.each do |repo| %>
+		<%= raw("<li>Repo #{i.to_s}: #{link_to repo["name"], repo["html_url"]}</li>") %>
+		<% i += 1 %>
+	  <% end %>
   <% end %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
