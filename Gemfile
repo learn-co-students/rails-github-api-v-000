@@ -28,7 +28,7 @@ gem 'pry'
 # Use Faraday for GET and POST
 gem 'faraday'
 # Dot-env
-gem 'dotenv-rails'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 #Testing
 group :test do
