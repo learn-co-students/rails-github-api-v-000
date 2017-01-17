@@ -199,6 +199,7 @@ DEPENDENCIES
   faraday
   jbuilder (~> 2.0)
   jquery-rails
+  json
   pry
   rack_session_access
   rails (= 4.2.1)
