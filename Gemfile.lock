@@ -194,6 +194,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  dotenv
   dotenv-rails
   faraday
   jbuilder (~> 2.0)
@@ -210,3 +211,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   webmock
+
+BUNDLED WITH
+   1.13.6
