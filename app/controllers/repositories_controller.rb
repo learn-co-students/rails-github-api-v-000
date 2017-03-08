@@ -20,6 +20,7 @@ class RepositoriesController < ApplicationController
 
     resp = Faraday.get("https://api.github.com/user/repos") do |req|
       req.headers["Authorization"] = "token #{session[:token]}"
+      req.headers['Accept'] = 'application/json'
     end
     #raise "stop".inspect
     @repos = JSON.parse(resp.body)
@@ -29,7 +30,8 @@ class RepositoriesController < ApplicationController
     resp = Faraday.post("https://api.github.com/user/repos") do |req|
       req.headers["Authorization"] = "token #{session[:token]}"
       req.headers['Accept'] = 'application/json'
-      req.body = {name: params[:name], scope: "public_repo"}.to_json
+      req.body = {name: params[:name]}.to_json
+      #req.body = {name: params[:name], scope: "public_repo"}.to_json
     end
     #raise "stop".inspect
     redirect_to '/'

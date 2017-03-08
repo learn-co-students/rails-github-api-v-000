@@ -27,8 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
 # Use Faraday for GET and POST
 gem 'faraday'
+# Dot-env
+gem 'dotenv-rails'
 # Figaro
-gem 'figaro'
+#gem 'figaro'
 
 #Testing
 group :test do
