@@ -12,23 +12,23 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   config.before(:each) do
+
     stub_request(:get, "https://api.github.com/user/repos").
-      with(:headers => {'Authorization'=>'token 1'}).
+      with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'1', 'User-Agent'=>'Faraday v0.9.1'}).
       to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
 
     stub_request(:post, "https://github.com/login/oauth/access_token").
-      with(:body => {"client_id"=> ENV["GITHUB_CLIENT"], "client_secret"=> ENV["GITHUB_SECRET"], "code"=>"20"},
-      :headers => {'Accept'=>'application/json'}).
-      to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
+      with(:body => {"{\"client_id\":\"6ccf0c2d52b9185a7be0\",\"client_secret\":\"7b35b79fda08ad7b4b3ff1e1ea3067d14b1caf79\",\"code\":\"20\"}"=>true},
+      :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Faraday v0.9.1'}).to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
     stub_request(:get, "https://api.github.com/user").
-      with(:headers => {'Authorization'=>'token 1'}).
+      with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'1', 'User-Agent'=>'Faraday v0.9.1'} ).
       to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
 
     stub_request(:post, "https://api.github.com/user/repos").
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
-      :headers => {'Authorization'=>'token 1'}).
-      to_return(:status => 201, :body => "", :headers => {})
+      :headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'1', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Faraday v0.9.1'}).
+      to_return(:status => 200, :body => "", :headers => {})
   end
 end
 
