@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/auth' => 'sessions#create'
+  get '/auth' => 'sessions#create'   # this is the redirect_uri from the first connection to github
   post '/repositories/create' => 'repositories#create'
   root 'repositories#index'
 
