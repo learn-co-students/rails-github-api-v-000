@@ -6,7 +6,10 @@ class RepositoriesController < ApplicationController
   end
 
   def create
-    post = Faraday.post "https://api.github.com/user/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
-    redirect_to '/'
+
+    response = Faraday.post "https://api.github.com/user/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+    # response = Faraday.post "https://api.github.com/orgs/learn-co-students/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+
+     redirect_to '/'
   end
 end
