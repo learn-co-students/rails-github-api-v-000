@@ -1,5 +1,5 @@
 class RepositoriesController < ApplicationController
-  
+
   def index
   conn = Faraday.new(url: 'https://api.github.com/user/repos')
   resp = conn.get do |req|
@@ -10,8 +10,8 @@ class RepositoriesController < ApplicationController
 end
 
 def create
-  conn = Faraday.new(url: 'https://api.github.com/user/repos')
-  conn.post do |req|
+  resp = Faraday.new(url: 'https://api.github.com/user/repos') #get the repos
+  resp.post do |req| #call POST on the repos acquired the line prior
     req.headers = { Accept: 'application/json',
                     Authorization: "token #{session[:token]}" }
     req.body = { name: params[:name] }.to_json
