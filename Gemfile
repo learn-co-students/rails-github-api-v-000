@@ -29,6 +29,8 @@ gem 'pry'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
+# Pagination
+gem 'kaminari'
 
 #Testing
 group :test do
