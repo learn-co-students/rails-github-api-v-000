@@ -13,7 +13,6 @@
 
 <div>
   token is <%= session[:token]%>  <br><br>
-  <%#=@repos%>
   <ul>
     <% @repos.each do |repo| %>
       <li><%= repo["name"] %></li>
