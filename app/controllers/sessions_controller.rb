@@ -14,14 +14,25 @@ class SessionsController < ApplicationController
     session[:token] = body["access_token"]
 
     resp1 = Faraday.get("https://api.github.com/user") do |req|
-      req.headers['Authorization'] = "token #{session[:token]}"
+      req.headers = {
+        'Authorization' => "token #{session[:token]}",
+        'Accept' => 'application/json'
+      }
     end
     session[:username] = JSON.parse(resp1.body)["login"]
-    redirect_to root_path
+    redirect_to '/'
   end
 
-  def destroy
-    session.delete(:token)
-    redirect_to root_path
-  end
+  # def create
+  #   response = Faraday.post "https://github.com/login/oauth/access_token", {client_id: ENV["GITHUB_CLIENT"], client_secret: ENV["GITHUB_SECRET"],code: params[:code]}, {'Accept' => 'application/json'}
+  #   access_hash = JSON.parse(response.body)
+  #   session[:token] = access_hash["access_token"]
+  #
+  #   user_response = Faraday.get "https://api.github.com/user", {}, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+  #   user_json = JSON.parse(user_response.body)
+  #   session[:username] = user_json["login"]
+  #
+  #   redirect_to '/'
+  # end
+
 end

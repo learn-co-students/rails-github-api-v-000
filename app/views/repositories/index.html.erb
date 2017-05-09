@@ -3,6 +3,9 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
+  <% @repos.each do |repo| %>
+    <%= repo["name"] %><br>
+  <% end %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
@@ -10,14 +13,3 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
-
-<div>
-  token is <%= session[:token]%>  <br><br>
-  <ul>
-    <% @repos.each do |repo| %>
-      <li><%= repo["name"] %></li>
-    <% end %>
-  </ul>
-</div>
-
-<%= link_to "Delete token", "/session/delete", method: :delete, data: {confirm: "ok?"}%>
