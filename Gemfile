@@ -29,6 +29,7 @@ gem 'pry'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
+gem 'figaro'
 
 #Testing
 group :test do
@@ -58,3 +59,5 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'learn-co'
