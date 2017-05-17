@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= "Logged in as #{session[:username]}" unless !logged_in? %>
 
 <%= yield %>
 
