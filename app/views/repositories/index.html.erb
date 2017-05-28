@@ -8,3 +8,11 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+<!-- <%= session[:token] %><br><BR> -->
+<% n = 1 %>
+<% @body.each do |b| %>
+  <h4>Repo <%= n%></h4>
+  <h4><%= b["name"] %></h4>
+  <h4><%= link_to "#{b['html_url']}", b["html_url"] %></h4><br>
+  <% n += 1 %>
+<% end %>
