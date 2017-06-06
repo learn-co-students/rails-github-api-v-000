@@ -1,14 +1,13 @@
-<%= link_to 'Sign Out', signout_path %>
-your_username
+
 <div class = "container">
 <h1><%= @user %>'s Repos</h1>
 
   <h1>Repos</h1>
-  <% if !@repos.empty? %>
-    <% @repos.each do |r| %>
-      <%= r['name'] %><br>
-    <% end %>
+
+  <% @repos.each do |r| %>
+    <%= r['name'] %><br>
   <% end %>
+
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
