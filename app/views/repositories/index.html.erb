@@ -10,7 +10,7 @@
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
-    <%= text_field_tag(:name, nil, id: "new-repo") %>
+    <%= text_field_tag(:name, true, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
 </div>
