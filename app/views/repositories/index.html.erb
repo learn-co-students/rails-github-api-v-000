@@ -1,12 +1,12 @@
 <div class = "container">
-<h1><%= @body[0]['owner']['login'] %>
+<h1><%= "hi " + @user['login']  %>
 </h1>
 
-session? <%= !!session['token'] %>
+session: <%= session['token'] %>
 
-  <% @body.each do |repo| %>
-  <h5>  <%= repo['name'] %> </h5>
-  <% end %>
+<%= @body%>
+
+
 
 
 
