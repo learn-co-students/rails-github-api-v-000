@@ -30,16 +30,7 @@ RSpec.configure do |config|
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
 
-      stub_request(:post, "https://github.com/login/oauth/access_token?client_id=5f0989683d6a5560e4c5&client_secret=492fedd3eb0e58ec77720c9328389430232f6347&code=20").
-               with(:headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Length'=>'0', 'User-Agent'=>'Faraday v0.9.1'}).
-               to_return(:status => 200, :body => "", :headers => {})
-
-               stub_request(:post, "https://github.com/login/oauth/access_token").
-  with(:body => {"{\"code\":\"20\",\"client_id\":\"5f0989683d6a5560e4c5\",\"client_secret\":\"492fedd3eb0e58ec77720c9328389430232f6347\"}"=>true},
-       :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Faraday v0.9.1'}).
-  to_return(:status => 200, :body => "", :headers => {})
-
-
+    
 
 
 

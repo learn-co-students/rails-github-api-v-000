@@ -8,7 +8,12 @@ class SessionsController < ApplicationController
     end
     body = JSON.parse(response.body)
     session[:token] = body['access_token']
-    redirect_to 'http://localhost:3000'
+    user = Faraday.get("https://api.github.com/user") do |request|
+      request.headers = {Authorization: "token #{session[:token]}"}
+    end
+
+    session[:username] = JSON.parse(user.body)['login']
+    redirect_to '/'
   end
 
 
