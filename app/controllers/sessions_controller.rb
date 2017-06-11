@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     # byebug
-    resp = Faraday.post 'https://github.com/login/oauth/access_token'do |req|
+    resp = Faraday.post 'https://github.com/login/oauth/access_token' do |req|
       req.params['client_id'] = ENV['GITHUB_CLIENT_ID']
       req.params['client_secret'] = ENV['GITHUB_SECRET']
       req.params['code'] = params[:code]
