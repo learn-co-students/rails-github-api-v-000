@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     def authenticate_user
       client_id = ENV['GITHUB_CLIENT']
       redirect_uri = CGI.escape("http://localhost:3000/auth")
-      github_url = "http://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}"
+      github_url = "http://github.com/login/oauth/authorize?client_id=#{client_id}&scope=repo"
       get_user_info
       redirect_to github_url unless logged_in?
     end
@@ -19,8 +19,9 @@ class ApplicationController < ActionController::Base
 
     def get_user_info
       resp = Faraday.get('https://api.github.com/user') do |req|
-        req.headers['Accept'] = 'application/json'
-        req.params['access_token'] = session[:token]
+        # req.headers['Accept'] = 'application/json'
+        req.headers['Authorization'] = "token #{session[:token]}"
+        # req.params['access_token'] = session[:token]
       end
       body = JSON.parse(resp.body)
       @username = body['login']

@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
     resp = Faraday.post('https://github.com/login/oauth/access_token') do |req|
       req.headers['Accept'] = 'application/json'
       req.params['client_id'] = ENV['GITHUB_CLIENT']
+      req.params['scope'] = 'repo public_repo'
       req.params['client_secret'] = ENV['GITHUB_SECRET']
       req.params['code'] = params[:code]
     end
