@@ -3,9 +3,9 @@
   <!-- List repositories here! -->
   <h1><%= session[:username] %></h1>
 
-    <% if @repos %>
+    <% if @repos_array %>
     <ul>
-      <% @repos.each do |repo| %>
+      <% @repos_array.each do |repo| %>
       <li>
        <%= repo["name"] %>
    </li>
