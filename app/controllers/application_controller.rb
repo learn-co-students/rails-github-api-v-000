@@ -15,7 +15,3 @@ class ApplicationController < ActionController::Base
        !!session[:token]
     end
 end
-
-# 537f95747ff12353026b
-#
-# 69697b1a57bd07678ba8abb2e86982c791be9ec9
