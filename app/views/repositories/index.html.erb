@@ -1,5 +1,6 @@
 <div class = "container">
   <h1>Repos</h1>
+  <%= session[:token]%>
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
