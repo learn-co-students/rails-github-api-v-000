@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
   private
 
     def authenticate_user
-  		client_id = ENV['GITHUB_CLIENT_ID']
+  		client_id = ENV['GITHUB_CLIENT']
   		redirect_uri = "http://localhost:3000/auth"
   		random_string = Random.new_seed
-  		github_url ="http://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}&state=#{random_string}"
+  		github_url ="http://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}&state=#{random_string}&scope=repo"
   		
         redirect_to github_url unless logged_in?
     end
