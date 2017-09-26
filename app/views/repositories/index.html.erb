@@ -1,5 +1,21 @@
 <div class = "container">
+
   <h1>Repos</h1>
+  <div>
+    <% if @error %>
+      <p><%= @error %></p>
+    <% elsif @items %>
+      <ul>
+        Current Username: <%= @login %>
+      <% @items.each do |item| %>
+        <li>
+          <%= item %>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
