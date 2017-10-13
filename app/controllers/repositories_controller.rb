@@ -1,3 +1,5 @@
+require 'pry'
+
 class RepositoriesController < ApplicationController
   def index
     @user = session[:username]
@@ -7,11 +9,9 @@ class RepositoriesController < ApplicationController
   end
 
   def create
-    resp = Faraday.post "https://api.github.com/user/repos?name=#{params[:name]}" do |req|
-      req.headers['Authorization'] = "token #{session[:token]}"
-    end
-
-    redirect_to '/'
+    resp = Faraday.post "https://api.github.com/user/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+    
+    redirect_to root_path
 
   end
 end
