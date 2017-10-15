@@ -42,3 +42,4 @@ Rails.application.configure do
 
   config.middleware.use RackSessionAccess::Middleware
 end
+
