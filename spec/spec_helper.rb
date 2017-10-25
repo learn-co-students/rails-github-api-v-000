@@ -29,7 +29,12 @@ RSpec.configure do |config|
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
+
+    stub_request(:post, "https://github.com/login/oauth/access_token?client_id=3de61ea8d6d2f4b5fe8a&client_secret=d7dae581f296ca107b906b53fe799e54a1d3363c&code=20&redirect_uri=http://localhost:3000/auth").
+      with(:headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Length'=>'0', 'User-Agent'=>'Faraday v0.9.1'}).
+      to_return(:status => 200, :body => "", :headers => {})
   end
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
+
