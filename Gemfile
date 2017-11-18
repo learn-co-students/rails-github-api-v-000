@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Pry for testing
-gem 'pry'
+gem 'byebug'
 # Use Faraday for GET and POST
 gem 'faraday'
 # Dot-env
