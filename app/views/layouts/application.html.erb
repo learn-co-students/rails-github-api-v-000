@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<%= "Logged in as #{session[:username]}" unless !logged_in? %>
 <%= yield %>
 
 </body>
