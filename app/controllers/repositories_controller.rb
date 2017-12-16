@@ -1,23 +1,11 @@
 class RepositoriesController < ApplicationController
-  #before_action :authenticate_user
-
   def index
+    response = Faraday.get "https://api.github.com/user/repos", {}, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+    @repos_array = JSON.parse(response.body)
   end
 
   def create
+    response = Faraday.post "https://api.github.com/user/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+    redirect_to '/'
   end
-
-  private
-
-  def authenticate_user
-    client_id = '35595bdf7017f9ad88ec'
-    redirect_uri = 'http://165.227.90.214:45912/auth'
-    github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}"
-    redirect_to github_url unless logged_in?
-  end
-
-  def logged_in?
-    !!session[:token]
-  end
-
 end
