@@ -4,7 +4,7 @@
   <p>User Name:
     <%= session[:username]%>
   </p>
-  <% repos.each do |repo| %>
+  <% @repos.each do |repo| %>
   <ul>
     <li><%= link_to "#{repo["name"]}", "#{repo["html_url"]}" %></li>
   </ul>

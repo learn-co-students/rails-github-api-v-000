@@ -3,7 +3,7 @@ class RepositoriesController < ApplicationController
     res = Faraday.get("https://api.github.com/user/repos") do |req|
       req.headers['Authorization'] = "token #{session[:token]}"
     end
-    @repos = JSON.parse(resp.body)
+    @repos = JSON.parse(res.body)
   end
 
   def create
