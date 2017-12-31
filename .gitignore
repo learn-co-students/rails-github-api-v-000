@@ -16,3 +16,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+.env
+CLIENT_ID = 'a137967e131ff264a4e3'
+CLIENT_SECRET = '3545a6a6647c99cc9e8c48129f47add8c78de7ff'
