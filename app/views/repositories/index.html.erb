@@ -2,11 +2,15 @@
   <%= session[:username] %>
 
   <h1>Repos</h1>
-  <!-- List repositories here! -->
-
   <%= form_tag("/repositories/create", method: "post") do %>
-    <%= label_tag(:name, "Create a New Repo:") %>
-    <%= text_field_tag(:name, nil, id: "new-repo") %>
-    <%= submit_tag("Create") %>
+  <%= label_tag(:name, "Create a New Repo:") %>
+  <%= text_field_tag(:name, nil, id: "new-repo") %>
+  <%= submit_tag("Create") %>
   <% end %>
+  <ol>
+    <% @repos.each do |repo| %>
+      <li><%= link_to repo["name"], repo["html_url"] %></li>
+    <% end %>
+  </ol>
+
 </div>
