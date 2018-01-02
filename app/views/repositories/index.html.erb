@@ -1,6 +1,6 @@
 <div class = "container">
   <%= session[:username] %>
-
+  <%= session[:token] %>
   <h1>Repos</h1>
   <%= form_tag("/repositories/create", method: "post") do %>
   <%= label_tag(:name, "Create a New Repo:") %>

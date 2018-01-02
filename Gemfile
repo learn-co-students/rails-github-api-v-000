@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# I like this better than faraday
+# # I like this better than faraday
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -37,6 +37,8 @@ group :test do
   gem 'capybara'
   gem 'rack_session_access'
   gem 'webmock'
+  gem 'byebug'
+  gem 'pry'
 end
 
 # Use ActiveModel has_secure_password
@@ -48,10 +50,9 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'pry'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
