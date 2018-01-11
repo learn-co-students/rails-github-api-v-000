@@ -8,3 +8,10 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+
+<div class = "container">
+  <h1><%= session[:username] %>'s Repos</h1>
+  <% @repositories.each do |repo| %>
+    <p><%= repo["name"] %></p>
+  <%end%>
+</div>
