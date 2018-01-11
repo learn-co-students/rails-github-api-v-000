@@ -2,6 +2,11 @@ require_relative '../spec_helper'
 
 describe "authentication" do
   it "displays the username on the page" do
+    stub_request(:post, "https://github.com/login/oauth/access_token").
+         with(:body => {"client_id"=>"", "client_secret"=>"", "code"=>"20"},
+              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Ruby'}).
+         to_return(:status => 200, :body => "", :headers => {})
+
     visit '/auth?code=20'
     expect(page).to have_content 'your_username'
   end
