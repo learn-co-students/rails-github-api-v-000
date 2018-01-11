@@ -1,0 +1,1643 @@
+
+
+Started GET "/" for ::1 at 2016-04-27 15:15:21 -0400
+Processing by RepositoriesController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `foursquare_url' for #<RepositoriesController:0x007fd26bd8e5d8>):
+  app/controllers/application_controller.rb:14:in `authenticate_user'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (54.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (125.9ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:15:37 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=b516759464cf0e8d39af" for ::1 at 2016-04-27 15:15:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b516759464cf0e8d39af"}
+  Rendered sessions/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1674ms (Views: 1673.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:15:48 -0400
+
+
+Started GET "/auth?code=b516759464cf0e8d39af" for ::1 at 2016-04-27 15:29:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b516759464cf0e8d39af"}
+Completed 500 Internal Server Error in 39832ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (776: unexpected token at 'error=incorrect_client_credentials&error_description=The+client_id+and%2For+client_secret+passed+are+incorrect.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23incorrect-client-credentials'):
+  app/controllers/sessions_controller.rb:12:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (124.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:29:46 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=44b2ee458a7e30d5cb20" for ::1 at 2016-04-27 15:29:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"44b2ee458a7e30d5cb20"}
+Completed 500 Internal Server Error in 25186ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (776: unexpected token at 'error=incorrect_client_credentials&error_description=The+client_id+and%2For+client_secret+passed+are+incorrect.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23incorrect-client-credentials'):
+  app/controllers/sessions_controller.rb:12:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (50.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (112.9ms)
+
+
+Started GET "/auth?code=44b2ee458a7e30d5cb20" for ::1 at 2016-04-27 15:31:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"44b2ee458a7e30d5cb20"}
+
+
+Started GET "/" for ::1 at 2016-04-27 15:38:13 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=133305001fdb87b166f5" for ::1 at 2016-04-27 15:38:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"133305001fdb87b166f5"}
+Completed 500 Internal Server Error in 51213ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (776: unexpected token at 'access_token=fde3d3f2d4fedd1a6872fa51bc626ca1196a5492&scope=&token_type=bearer'):
+  app/controllers/sessions_controller.rb:12:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (121.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:39:32 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=5df916b972e970079b59" for ::1 at 2016-04-27 15:39:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"5df916b972e970079b59"}
+Completed 500 Internal Server Error in 23992ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (776: unexpected token at 'access_token=fde3d3f2d4fedd1a6872fa51bc626ca1196a5492&scope=&token_type=bearer'):
+  app/controllers/sessions_controller.rb:12:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (50.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (109.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:40:18 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=e2f6a58e83b596f6b848" for ::1 at 2016-04-27 15:40:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e2f6a58e83b596f6b848"}
+Completed 500 Internal Server Error in 24285ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (776: unexpected token at 'access_token=fde3d3f2d4fedd1a6872fa51bc626ca1196a5492&scope=&token_type=bearer'):
+  app/controllers/sessions_controller.rb:12:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (55.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (116.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:47:24 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:47:24 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=22b2c465cd2bd53acec2" for ::1 at 2016-04-27 15:47:24 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"22b2c465cd2bd53acec2"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for "{'Accept' :'application/json'}":String):
+  app/controllers/sessions_controller.rb:9:in `block in create'
+  app/controllers/sessions_controller.rb:5:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (120.9ms)
+
+
+Started GET "/auth?code=22b2c465cd2bd53acec2" for ::1 at 2016-04-27 15:47:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"22b2c465cd2bd53acec2"}
+  Rendered sessions/create.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 79164ms (Views: 205.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 15:49:17 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 15:49:23 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:50:14 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 15:50:14 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 15:50:16 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:50:28 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 191ms (Views: 181.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/repositories/create" for ::1 at 2016-04-27 15:50:38 -0400
+Processing by RepositoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F1SKnt95Jm8X0pUDI22pNdrK2KcJsI1h/s55KH7kUuKqo/7mUWP7OP450T03fMO4PfIp4rKfCzJ9zm0ugg/OeQ==", "name"=>"don", "commit"=>"Create"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template repositories/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/DonAndMimi/Development/code/rails-github-api-v-000/app/views"
+):
+  actionview (4.2.1) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.1) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/DonAndMimi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.3) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/DonAndMimi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/DonAndMimi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/DonAndMimi/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (76.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (124.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:52:27 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 207ms (Views: 197.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:53:45 -0400
+Processing by RepositoriesController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `destroy' for "":String):
+  app/controllers/application_controller.rb:11:in `authenticate_user'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (119.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 15:54:02 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=01bdd67d3650dab29998" for ::1 at 2016-04-27 15:54:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"01bdd67d3650dab29998"}
+  Rendered sessions/create.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29723ms (Views: 209.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 15:54:32 -0400
+
+
+Started GET "/auth?code=01bdd67d3650dab29998" for ::1 at 2016-04-27 15:56:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"01bdd67d3650dab29998"}
+  Rendered sessions/create.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 302673ms (Views: 298.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:01:39 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=e349b6b99baa06f5eebc" for ::1 at 2016-04-27 16:01:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e349b6b99baa06f5eebc"}
+  Rendered sessions/create.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 339189ms (Views: 218.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:07:28 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=ee572e0b60fd5b9274c1" for ::1 at 2016-04-27 16:07:29 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ee572e0b60fd5b9274c1"}
+  Rendered sessions/create.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16256ms (Views: 219.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:09:11 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=43f8a86fce6e7235f027" for ::1 at 2016-04-27 16:09:12 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"43f8a86fce6e7235f027"}
+Completed 500 Internal Server Error in 48862ms (ActiveRecord: 0.0ms)
+
+JSON::ParserError (776: unexpected token at 'access_token=fde3d3f2d4fedd1a6872fa51bc626ca1196a5492&scope=&token_type=bearer'):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (53.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (126.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:11:49 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=2b622cd1cf6c7d9dbead" for ::1 at 2016-04-27 16:11:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"2b622cd1cf6c7d9dbead"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `each' for "{Accept: application/json}":String):
+  app/controllers/sessions_controller.rb:9:in `block in create'
+  app/controllers/sessions_controller.rb:5:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (50.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (113.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:13:05 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=3a4530ab0b33c573a858" for ::1 at 2016-04-27 16:13:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3a4530ab0b33c573a858"}
+  Rendered sessions/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 94615ms (Views: 234.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:34:55 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:35:42 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:36:12 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=8613178c9f0c10347d23" for ::1 at 2016-04-27 16:36:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"8613178c9f0c10347d23"}
+  Rendered sessions/create.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 753ms (Views: 509.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 16:36:49 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=123e68b1775dfb360535" for ::1 at 2016-04-27 16:36:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"123e68b1775dfb360535"}
+  Rendered sessions/create.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 16700ms (Views: 142.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=e2f6a58e83b596f6b848" for ::1 at 2016-04-27 16:38:12 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e2f6a58e83b596f6b848"}
+  Rendered sessions/create.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 755ms (Views: 123.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 16:38:13 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 17:19:49 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=4cc086d22575eb4dd2ea" for ::1 at 2016-04-27 17:19:49 -0400
+
+SyntaxError (/Users/DonAndMimi/Development/code/rails-github-api-v-000/app/controllers/sessions_controller.rb:27: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/sessions_controller.rb:27: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (122.3ms)
+
+
+Started GET "/auth?code=4cc086d22575eb4dd2ea" for ::1 at 2016-04-27 17:20:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"4cc086d22575eb4dd2ea"}
+  Rendered sessions/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37662ms (Views: 205.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:20:41 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 17:21:53 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=3e61d4727d8ea9f7672b" for ::1 at 2016-04-27 17:21:54 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3e61d4727d8ea9f7672b"}
+Completed 500 Internal Server Error in 3516ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `sessions' for #<SessionsController:0x007fd1a8d630e0>):
+  app/controllers/sessions_controller.rb:11:in `block in create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (50.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (114.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:22:08 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=c02f374cb99a97931087" for ::1 at 2016-04-27 17:22:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c02f374cb99a97931087"}
+  Rendered sessions/create.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 199247ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:25:30 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=48e76d5e576a27a7ce73" for ::1 at 2016-04-27 17:25:30 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"48e76d5e576a27a7ce73"}
+  Rendered sessions/create.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 211605ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:30:50 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=b620a6a455470ea1f5c5" for ::1 at 2016-04-27 17:30:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b620a6a455470ea1f5c5"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 9007ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:30:59 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=426597d49e94e774a2e7" for ::1 at 2016-04-27 17:30:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"426597d49e94e774a2e7"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1389ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:01 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=b3518dffe49b04e9a04c" for ::1 at 2016-04-27 17:31:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b3518dffe49b04e9a04c"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1311ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:02 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=a214dd5cf8c735f31be6" for ::1 at 2016-04-27 17:31:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"a214dd5cf8c735f31be6"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4956ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:07 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=dabc63a957d69fe9d60a" for ::1 at 2016-04-27 17:31:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"dabc63a957d69fe9d60a"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1140ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:08 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=301132cbd249753107da" for ::1 at 2016-04-27 17:31:09 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"301132cbd249753107da"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 22481ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:31 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=5af885bb266e0b09a563" for ::1 at 2016-04-27 17:31:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"5af885bb266e0b09a563"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 445ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:32 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=109f60d98e5c2d324e0d" for ::1 at 2016-04-27 17:31:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"109f60d98e5c2d324e0d"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 515ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:32 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=21141e7f3058edaceafe" for ::1 at 2016-04-27 17:31:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"21141e7f3058edaceafe"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 451ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:33 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=eb9f65af487fb2c78c13" for ::1 at 2016-04-27 17:31:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"eb9f65af487fb2c78c13"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 528ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:34 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=c89c12db428441768892" for ::1 at 2016-04-27 17:31:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"c89c12db428441768892"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 500ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:34 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=af099f2a5f043cc0c1c8" for ::1 at 2016-04-27 17:31:34 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"af099f2a5f043cc0c1c8"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 698ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:35 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=b71ad04108658595520e" for ::1 at 2016-04-27 17:31:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"b71ad04108658595520e"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 370ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:36 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=74904ebafc96e529e748" for ::1 at 2016-04-27 17:31:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"74904ebafc96e529e748"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 472ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:41 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=d9d54f478ddfff6c602b" for ::1 at 2016-04-27 17:31:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d9d54f478ddfff6c602b"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 311ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:42 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=d58b2d6221c808eb0fc1" for ::1 at 2016-04-27 17:31:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d58b2d6221c808eb0fc1"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 360ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:42 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=bc244af017914a761158" for ::1 at 2016-04-27 17:31:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"bc244af017914a761158"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 401ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:43 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=e57851f394a2d58b6168" for ::1 at 2016-04-27 17:31:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e57851f394a2d58b6168"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 339ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:43 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=77a725b78aab61069186" for ::1 at 2016-04-27 17:31:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"77a725b78aab61069186"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 406ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:31:44 -0400
+Processing by RepositoriesController#index as HTML
+Redirected to https://github.com/login/oauth/authorize?client_id=d5771a0df9bff996dc43
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth?code=5a6dcc746ffc448abc84" for ::1 at 2016-04-27 17:31:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"5a6dcc746ffc448abc84"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 827ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:32:24 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 184ms (Views: 174.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 17:32:24 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 17:37:17 -0400
+
+ActionController::RoutingError (undefined local variable or method `session' for RepositoriesController:Class):
+  app/controllers/repositories_controller.rb:2:in `<class:RepositoriesController>'
+  app/controllers/repositories_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (99.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (59.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (124.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:37:40 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 17:37:40 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 17:38:39 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 17:38:39 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 17:59:16 -0400
+
+SyntaxError (/Users/DonAndMimi/Development/code/rails-github-api-v-000/app/controllers/repositories_controller.rb:15: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/repositories_controller.rb:15: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (51.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (111.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:59:25 -0400
+Processing by RepositoriesController#index as HTML
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+URI::InvalidURIError (bad URI(is not URI?): users/#{@username}/repos):
+  app/controllers/repositories_controller.rb:7:in `index'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (58.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (129.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 17:59:49 -0400
+Processing by RepositoriesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+URI::InvalidURIError (bad URI(is not URI?): https://api.github.com/users/#{@username}/repos):
+  app/controllers/repositories_controller.rb:7:in `index'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (49.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (109.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:00:11 -0400
+Processing by RepositoriesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+URI::InvalidURIError (bad URI(is not URI?): https://api.github.com/users/#{@user_name}/repos):
+  app/controllers/repositories_controller.rb:7:in `index'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (123.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:00:35 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 106545ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 18:02:21 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 18:03:25 -0400
+Processing by RepositoriesController#index as HTML
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 0.0ms)
+
+TypeError (no implicit conversion of Faraday::Response into String):
+  app/controllers/repositories_controller.rb:8:in `index'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (48.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (108.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:03:42 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 443724ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/DonAndMimi/Development/code/rails-github-api-v-000/app/views/repositories/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/repositories/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (48.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (109.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:11:06 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 2778ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/DonAndMimi/Development/code/rails-github-api-v-000/app/views/repositories/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/repositories/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (50.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (111.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:11:28 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3597ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/DonAndMimi/Development/code/rails-github-api-v-000/app/views/repositories/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/repositories/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.6ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (49.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (109.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:11:56 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 4564ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for #<Hash:0x007f820e0b9810>):
+    12: 
+    13:   <%if @user_repos%>
+    14:     <% @user_repos.each do |r|%>
+    15:       <%= r.name %>
+    16:     <% end %>
+    17:   <%end%>
+  app/views/repositories/index.html.erb:15:in `block in _app_views_repositories_index_html_erb__2926223942932899668_70098244486500'
+  app/views/repositories/index.html.erb:14:in `each'
+  app/views/repositories/index.html.erb:14:in `_app_views_repositories_index_html_erb__2926223942932899668_70098244486500'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (48.0ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (110.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:12:18 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (44.2ms)
+Completed 500 Internal Server Error in 3016ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `name' for #<#<Class:0x007f820a902a48>:0x007f821121d5a0>):
+    12: 
+    13:   <%if @user_repos%>
+    14:     <% @user_repos.each do |r|%>
+    15:       <%= r[name] %>
+    16:     <% end %>
+    17:   <%end%>
+  app/views/repositories/index.html.erb:15:in `block in _app_views_repositories_index_html_erb__2926223942932899668_70098274876840'
+  app/views/repositories/index.html.erb:14:in `each'
+  app/views/repositories/index.html.erb:14:in `_app_views_repositories_index_html_erb__2926223942932899668_70098274876840'
+
+
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.2ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (49.1ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/DonAndMimi/.rvm/gems/ruby-2.2.3/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (109.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-27 18:12:49 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 816ms (Views: 76.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 18:12:50 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 18:13:02 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4068ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 18:13:06 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 18:13:37 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 285ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootswatch.min.self-ffe29333ecab2eb74d9fa3d7767fd3d6c58767ae3f288be548a84cde5b307260.css?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/application.self-c84458d239ba4b90677f85f4a56c8f26efba911efb327edd523d8881d46ea738.css?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/repositories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/repositories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-27 18:13:37 -0400
+
+
+Started GET "/" for ::1 at 2016-04-27 18:13:45 -0400
+Processing by RepositoriesController#index as HTML
+  Rendered repositories/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 351ms (Views: 41.4ms | ActiveRecord: 0.0ms)
