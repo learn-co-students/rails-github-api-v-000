@@ -9,6 +9,15 @@ require 'webmock/rspec'
 require 'rack_session_access/capybara'
 
 RSpec.configure do |config|
+
+  config.backtrace_exclusion_patterns = [
+    /\/lib\d*\/ruby\//,
+    /bin\//,
+    /gems/,
+    /spec\/spec_helper\.rb/,
+    /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]
+
   config.include Capybara::DSL
 
   config.before(:each) do
