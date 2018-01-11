@@ -1,6 +1,10 @@
 <div class = "container">
+<p>token: <%= session[:token] %></p>
+<p>username: <%= session[:username] %></p>
   <h1>Repos</h1>
-  <!-- List repositories here! -->
+
+	your_username 
+  <%= @repos_array.inspect %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
