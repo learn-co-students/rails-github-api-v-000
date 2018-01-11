@@ -11,3 +11,9 @@
 
 4. Your solution will "make it work", but we want to move the API calls out of the controllers. Once the tests pass, [learn how to refactor your code in the next lab](https://github.com/learn-co-curriculum/rails-refactoring-apis). This is important – don't skip it!
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-github-api' title='Working with APIs'>Working with APIs</a> on Learn.co and start learning to code for free.</p>
+
+
+Client ID
+42bea5684153a0f32217
+Client Secret
+7fe1a53fab5425b3389bc9843541dab1d13dcb90
