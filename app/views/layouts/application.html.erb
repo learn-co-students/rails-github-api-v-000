@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<% if session[:username] %>
+  <h1>Hello, <%= session[:username] %></h1>
+<% end %>
+
 <%= yield %>
 
 </body>
