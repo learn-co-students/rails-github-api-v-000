@@ -1,7 +1,12 @@
 <div class = "container">
+  <h1>Hello <%= @user %></h1>
   <h1>Repos</h1>
   <!-- List repositories here! -->
-
+  <% @repos.each.with_index do |repo, i| %>
+    <ul>
+    Repo <%= i %>: <%= repo["name"] %>
+    </ul>
+  <% end %>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
