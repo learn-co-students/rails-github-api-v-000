@@ -1,4 +1,5 @@
 require_relative '../spec_helper'
+require 'pry'
 
 describe "authentication" do
   it "displays the username on the page" do
