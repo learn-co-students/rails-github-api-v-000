@@ -1,5 +1,19 @@
 <div class = "container">
   <h1>Repos</h1>
+
+  <% if @errors %>
+    <% @errors.each do |e| %>
+      <%= e["message"] %>
+    <% end %>
+  <% end %>
+
+  <% if @repos %>
+    <h2>All your repositories, <%= @user %>:</h2>
+    <% @repos.each do |r| %>
+      <p><%=r["name"]%></p>
+    <% end %>
+  <% end %>
+ 
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
