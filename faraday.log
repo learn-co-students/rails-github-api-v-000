@@ -1,0 +1,23 @@
+# Logfile created on 2017-05-17 12:21:47 -0400 by logger.rb/53141
+I, [2017-05-17T12:21:47.315382 #71608]  INFO -- : post https://github.com/login/oauth/access_token?client_id=ff9c81367f82c1eb1726&client_secret=af566444041c038131f0f850531bb6463bdc74f9&code=8eda836e12985838e108&conten=application%2Fjson
+D, [2017-05-17T12:21:47.315438 #71608] DEBUG -- request: User-Agent: "Faraday v0.9.1"
+I, [2017-05-17T12:21:47.606199 #71608]  INFO -- Status: 200
+D, [2017-05-17T12:21:47.606303 #71608] DEBUG -- response: server: "GitHub.com"
+date: "Wed, 17 May 2017 16:21:47 GMT"
+content-type: "application/x-www-form-urlencoded; charset=utf-8"
+transfer-encoding: "chunked"
+connection: "close"
+status: "200 OK"
+cache-control: "no-cache"
+vary: "X-PJAX, Accept-Encoding"
+x-ua-compatible: "IE=Edge,chrome=1"
+x-request-id: "2fc94af56a1c71d3c40202545774ccf3"
+x-runtime: "0.048322"
+content-security-policy: "default-src 'none'; base-uri 'self'; block-all-mixed-content; child-src render.githubusercontent.com; connect-src 'self' uploads.github.com status.github.com collector.githubapp.com api.github.com www.google-analytics.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-user-asset-79cafe.s3.amazonaws.com wss://live.github.com; font-src assets-cdn.github.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; img-src 'self' data: assets-cdn.github.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com *.githubusercontent.com; media-src 'none'; script-src assets-cdn.github.com; style-src 'unsafe-inline' assets-cdn.github.com"
+strict-transport-security: "max-age=31536000; includeSubdomains; preload"
+public-key-pins: "max-age=5184000; pin-sha256=\"WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\"; pin-sha256=\"RRM1dGqnDFsCJXBTHky16vi1obOlCgFFn/yOhI/y+ho=\"; pin-sha256=\"k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=\"; pin-sha256=\"K87oWBWM9UZfyddvDfoxL+8lpNyoUB2ptGtn0fv6G2Q=\"; pin-sha256=\"IQBnNBEiFuhj+8x6X8XLgh01V9Ic5/V3IRQLNFFc7v4=\"; pin-sha256=\"iie1VXtL7HzAMF+/PVPR9xzT80kQxdZeJ+zduCB3uj0=\"; pin-sha256=\"LvRiGEjRqfzurezaWuj8Wie2gyHMrW5Q06LspMnox7A=\"; includeSubDomains"
+x-content-type-options: "nosniff"
+x-frame-options: "deny"
+x-xss-protection: "1; mode=block"
+x-served-by: "9e87b28fb3a65e563c8d72545356c3e0"
+x-github-request-id: "D5FB:1978:E0B317:14C7209:591C789B"
