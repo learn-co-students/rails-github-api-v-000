@@ -12,6 +12,7 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   config.before(:each) do
+
     stub_request(:get, "https://api.github.com/user/repos").
       with(:headers => {'Authorization'=>'token 1'}).
       to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
