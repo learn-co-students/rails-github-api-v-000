@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def authenticate_user
-    end
+  def authenticate_user
+     redirect_to "https://github.com/login/oauth/authorize?client_id=#{ENV['d0d5b143f3052a7b0565']}&scope=repo" if !logged_in?
+   end
 
-    def logged_in?
-    end
+   def logged_in?
+     !!session[:token]
+   end
 end
