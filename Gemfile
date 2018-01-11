@@ -28,7 +28,7 @@ gem 'pry'
 # Use Faraday for GET and POST
 gem 'faraday'
 # Dot-env
-gem 'dotenv-rails'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 #Testing
 group :test do
@@ -53,8 +53,10 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'rb-readline'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
 end
 
