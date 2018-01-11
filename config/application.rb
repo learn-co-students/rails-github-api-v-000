@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
+GITHUB_CLIENT_ID = ENV['a4d3cdd8d8ff49fa54c7']
+GITHUB_SECRET = ENV['c7e0bf60f7bd3eb4d351078aaf61fffb64c26d24']
 module GithubDemo
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
