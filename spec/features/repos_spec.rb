@@ -14,6 +14,7 @@ describe "visiting root" do
 
   it "lists repos" do
     visit '/'
+    puts page.body
     expect(page).to have_content 'Repo 1'
     expect(page).to have_content 'Repo 2'
     expect(page).to have_content 'Repo 3'
