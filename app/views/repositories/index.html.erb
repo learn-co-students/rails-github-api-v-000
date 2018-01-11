@@ -1,5 +1,11 @@
+<%= session[:token] %>
 <div class = "container">
   <h1>Repos</h1>
+  <ul>
+    <% @repos.each do |r| %>
+      <li><%= r['name'] %></li>
+    <% end %>
+  </ul>
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
