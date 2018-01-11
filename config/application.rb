@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+ENV['GITHUB_CLIENT'] = 'e57025699436667384a7'
+ENV['GITHUB_SECRET'] = '92fa4d53f4eb2c38c006fa9e0c4dde99ea5aa829'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
