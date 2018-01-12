@@ -1,5 +1,8 @@
 <div class = "container">
-  <h1>Repos</h1>
+  <h1><%= session[:username] %>'s Repos</h1>
+  <% @repos.each do |repo| %>
+  <%= link_to repo["name"], repo["html_url"] %><br>
+  <% end %>
   <!-- List repositories here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
