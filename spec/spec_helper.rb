@@ -26,9 +26,20 @@ RSpec.configure do |config|
       to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
 
     stub_request(:post, "https://api.github.com/user/repos").
-      with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
+      with(:body => {"{\"name\":\"a-new-repo\"}"=>nil},
       :headers => {'Authorization'=>'token 1'}).
-      to_return(:status => 201, :body => "", :headers => {})
+      to_return(:status => 200, :body => "", :headers => {})
+      
+      stub_request(:get, "https://api.github.com/user/repos?oauth_token=1").
+         with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.1'}).
+         to_return(:status => 200, :body => "", :headers => {})
+         
+             stub_request(:post, "https://api.github.com/user/repos").
+         with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
+              :headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'token 1', 'Content-Type'=>'application/x-www-form-urlencoded', 'User-Agent'=>'Faraday v0.9.1'}).
+         to_return(:status => 200, :body => "", :headers => {})
+       
+
   end
 end
 
