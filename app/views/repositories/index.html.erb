@@ -2,6 +2,7 @@
   <h1><%= session[:username] %>'s Repos</h1>
   <% @repos.each do |repo| %>
     <%= repo["name"] %><br>
+    <%= link_to(repo["html_url"],repo["html_url"]) %>
   <% end %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
@@ -10,3 +11,5 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+
+<h3>'your_username'</h3>
