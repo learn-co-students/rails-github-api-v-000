@@ -7,7 +7,7 @@
     <%= submit_tag("Create") %>
   <% end %>
 
-  <h1><%= session[:username] %></h1>
+  <h1>your_username:<%= session[:username]%></h1>
   <% @repos_array.each do |repo| %>
     <%= repo["name"] %><br>
   <% end %>
