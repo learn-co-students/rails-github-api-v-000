@@ -1,9 +1,9 @@
 <div class = "container">
   <h1><%= session["username"] %>'s Repos</h1>
   <% if @repositories %>
-    <%= @repositories.each do |repo| %>
+    <% @repositories.each do |repo| %>
       <ul>
-        <li><%= repo %></li>
+        <li><%= repo["name"] %></li>
       </ul>
     <% end %>
   <% end %>
