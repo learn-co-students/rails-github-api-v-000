@@ -4,7 +4,9 @@ class RepositoriesController < ApplicationController
       req.headers['Authorization'] = "token #{session[:token]}"
       req.headers['Accept'] = 'application/json'
     end
-    @repositories = JSON.parse(resp.body)
+    repositories = JSON.parse(resp.body)
+    @repositories = Kaminari.paginate_array(repositories).page(params[:page])
+    #binding.pry
   end
 
   def create
