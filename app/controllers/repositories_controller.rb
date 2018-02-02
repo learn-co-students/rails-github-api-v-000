@@ -10,7 +10,7 @@ class RepositoriesController < ApplicationController
   	end
 
   	@repositories = JSON.parse(@repositories.body)
-  	@repositories = Kaminari.paginate_array(@repositories).page(params[:page]).per(10)
+  	# @repositories = Kaminari.paginate_array(@repositories).page(params[:page]).per(10)
   end
 
   def create
@@ -24,7 +24,7 @@ class RepositoriesController < ApplicationController
   	}
   	body = JSON[body]
 
-  	Faraday.post("https://api.github.com/self/repo") do |req|
+  	Faraday.post("https://api.github.com/user/repos") do |req|
   		req.params[:body] = body
   		req.params[:access_token] = session[:token]
   	end

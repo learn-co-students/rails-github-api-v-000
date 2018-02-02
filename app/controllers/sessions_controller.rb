@@ -3,11 +3,15 @@ class SessionsController < ApplicationController
 
   def create
   	resp = Faraday.post("https://github.com/login/oauth/access_token") do |req|
-  		req.params['client_id'] = ENV['client_id']
-  		req.params['client_secret'] = ENV['client_secret']
+  		req.params['client_id'] = ENV['GITHUB_CLIENT_ID']
+  		req.params['client_secret'] = ENV['GITHUB_CLIENT_SECRET']
   		req.params['code'] = params[:code]
   	end
-  	session[:token] = resp.body.split('&')[0].gsub('access_token=','')
+    if resp.body.include? 'access_token='
+      session[:token] = resp.body.split('&')[0].gsub('access_token=','')
+    else
+      binding.pry
+    end
   	redirect_to root_path
   end
 end
