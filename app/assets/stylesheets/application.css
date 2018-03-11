@@ -19,3 +19,7 @@
   text-align: center;
   margin: 3% auto;
 }
+
+li.repos {
+  text-align: left;
+}
