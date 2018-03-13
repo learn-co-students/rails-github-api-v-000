@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
       # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
       client_id = ENV["GITHUB_CLIENT_ID"]
       redirect_uri = "http://localhost:3000/auth"
-      # github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}&scope=repo"
-      github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=repo"
+      github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}&scope=repo"
       redirect_to github_url if !logged_in?
     end
 
