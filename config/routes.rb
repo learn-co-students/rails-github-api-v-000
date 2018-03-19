@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/auth' => 'sessions#create'
+  get '/repositories' => 'repositories#index'
   post '/repositories/create' => 'repositories#create'
   root 'repositories#index'
 
