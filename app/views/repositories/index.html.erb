@@ -1,6 +1,6 @@
 <div class = "container">
-  <h1>Repos for <%= @repos.first["owner"]["login"] %></h1>
-  <!-- List repositories here! -->
+
+  <h1>Repos for <%= @name['login'] %></h1>
   <% @repos.each do |repo| %>
     <%= repo["name"] %><br>
   <% end %>
