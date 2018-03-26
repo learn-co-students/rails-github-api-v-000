@@ -11,3 +11,6 @@
 
 4. Your solution will "make it work", but we want to move the API calls out of the controllers. Once the tests pass, [learn how to refactor your code in the next lab](https://github.com/learn-co-curriculum/rails-refactoring-apis). This is important – don't skip it!
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-github-api' title='Working with APIs'>Working with APIs</a> on Learn.co and start learning to code for free.</p>
+
+  <!-- <h1>Repos for <%=# @repos.first["owner"]["login"] %></h1> -->
+  <!-- List repositories here! -->
