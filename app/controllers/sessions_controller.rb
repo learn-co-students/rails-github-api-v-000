@@ -3,11 +3,9 @@ class SessionsController < ApplicationController
 
   def create
     # state = "GOCVKFbt4httKVmlaBbBqfY32TE"
-    
-    client_id = ENV["GITHUB_CLIENT"]
-    client_secret =  ENV["GITHUB_SECRET"]
+  
     # auth_token = Faraday.post "https://github.com/login/oauth/access_token" do |req|
-    auth_token = Faraday.post "https://github.com/login/oauth/access_token", {client_id: client_id, client_secret: client_secret, code: params[:code]}.to_json, {'Accept' => 'application/json', 'Content-Type' => 'application/json'}
+    auth_token = Faraday.post "https://github.com/login/oauth/access_token", {client_id: ENV["GITHUB_CLIENT_ID"], client_secret: ENV["GITHUB_CLIENT_SECRET"], code: params[:code]}.to_json, {'Accept' => 'application/json', 'Content-Type' => 'application/json'}
       # req.headers['Accept'] = "application/json"
       # req['Content-Type'] = "application/json"
       # req.params = {
@@ -29,4 +27,3 @@ class SessionsController < ApplicationController
   end
   
 end
-Failure/Error: visit '/auth?code=20' WebMock::NetConnectNotAllowedError: Real HTTP connections are disabled. Unregistered request
