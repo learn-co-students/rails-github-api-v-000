@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1>Repos of <%= @repos[0]["owner"]["login"] %> </h1>
+  <h1>Repos of <%= session[:username] %></h1>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
@@ -7,11 +7,11 @@
   <% end %>
 
   <div class="repos">
-    <%= @repos.each do |repo| %>
+    <% @repos.each do |repo| %>
       <div class="repo">
         <h3><%= repo["name"] %></h3>
+        <p>URL: <a href="<%= repo["html_url"] %>"><%= repo["html_url"] %></a></p>
       </div>
     <% end %>
   </div>
-
 </div>
