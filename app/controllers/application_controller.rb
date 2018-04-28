@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user
 
   def set_username
-    resp = Faraday.get("https://api.github.com/user") do |req|
-      req.params["access_token"] = session[:token]
-    end
+    # resp = Faraday.get("https://api.github.com/user") do |req|
+    #   req.params["access_token"] = session[:token]
+    # end
+
+    resp = Faraday.get "https://api.github.com/user", {}, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
 
     body = JSON.parse(resp.body)
     session[:username] = body["login"]
@@ -24,8 +26,8 @@ class ApplicationController < ActionController::Base
       # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
 
       client_id = ENV['GITHUB_CLIENT_ID']
-      # redirect_uri = CGI.escape("http://localhost:3000/auth")
-      github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=public_repo"
+      redirect_uri = CGI.escape("http://localhost:3000/auth")
+      github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}&scope=repo"
       set_username unless current_username
       redirect_to github_url unless logged_in?
     end
