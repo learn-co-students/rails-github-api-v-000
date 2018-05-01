@@ -16,6 +16,15 @@ RSpec.configure do |config|
       with(:headers => {'Authorization'=>'token 1'}).
       to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
 
+    stub_request(:get, "https://github.com/login/oauth/access_token?client_id=5dd223d3dd78adf88b36&client_secret=6c2d719cb76f482aa5d099944a7306c5db97b61f&code=20&headers%5BAccept%5D=application/json&redirect_uri=http://localhost:3000/auth").
+     with(
+       headers: {
+      'Accept'=>'application/json',
+      'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+      'User-Agent'=>'Faraday v0.9.1'
+       }).
+     to_return(status: 200, :body => {"access_token"=>"1"}.to_json, headers: {})
+
     stub_request(:post, "https://github.com/login/oauth/access_token").
       with(:body => {"client_id"=> ENV["GITHUB_CLIENT_ID"], "client_secret"=> ENV["GITHUB_CLIENT_SECRET"], "code"=>"20"},
       :headers => {'Accept'=>'application/json'}).
