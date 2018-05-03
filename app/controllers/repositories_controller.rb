@@ -15,6 +15,13 @@ class RepositoriesController < ApplicationController
   end
 
   def create
+  	binding.pry
+  	@repos_response = Faraday.post "https://api.github.com/user/repos" do |req|
+		req.params['oauth_token'] = session[:token]
+		req.body = "{name: #{params[:name]}}.to_json"
+	end
+
+	redirect_to root_path
   	
   end
 
