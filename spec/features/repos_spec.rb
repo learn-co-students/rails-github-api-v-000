@@ -36,7 +36,7 @@ describe "new repo form" do
 
   expect(WebMock).to have_requested(:post, "https://api.github.com/user/repos?oauth_token=1").
      with(
-       body: {"{name: a-new-repo}.to_json"=>nil},
+       body: {"\"{name: a-new-repo}\""=>nil},
        headers: {
       'Accept'=>'*/*',
       'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
