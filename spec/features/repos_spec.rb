@@ -3,9 +3,7 @@ require_relative '../spec_helper'
 describe "authentication" do
   it "displays the username on the page" do
     visit '/auth?code=20'
-    # stub_request(:get, "https://github.com/login/oauth/access_token?client_id=5dd223d3dd78adf88b36&client_secret=6c2d719cb76f482aa5d099944a7306c5db97b61f&code=20&redirect_uri=http://localhost:3000/auth")
     binding.pry
-    puts page.html
     expect(page).to have_content 'your_username'
   end
 end
