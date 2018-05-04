@@ -30,19 +30,8 @@ describe "new repo form" do
     fill_in 'new-repo', with: 'a-new-repo'
     click_button 'Create'
 
-    # expect(WebMock).to have_requested(:post, "https://api.github.com/user/repos").
-    #   with(:body => {name: "a-new-repo"}.to_json,
-    #   :headers => {'Authorization' => "token 1"})
-
-  expect(WebMock).to have_requested(:post, "https://api.github.com/user/repos?oauth_token=1").
-     with(
-       body: {"\"{name: a-new-repo}\""=>nil},
-       headers: {
-      'Accept'=>'*/*',
-      'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-      'Content-Type'=>'application/x-www-form-urlencoded',
-      'User-Agent'=>'Faraday v0.9.1'
-       })
-
+    expect(WebMock).to have_requested(:post, "https://api.github.com/user/repos").
+      with(:body => {name: "a-new-repo"}.to_json,
+      :headers => {'Authorization' => "token 1"})
   end
 end

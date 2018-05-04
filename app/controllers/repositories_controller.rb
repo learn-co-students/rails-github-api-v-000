@@ -2,12 +2,12 @@ class RepositoriesController < ApplicationController
 
   def index
 
-  	@repos_response = Faraday.get "https://api.github.com/user/repos" do |req|
-		req.params['oauth_token'] = session[:token]
-	end
+  	repos_resp = Faraday.get "https://api.github.com/user/repos", {}, 
+	  	{'Authorization' => "token #{session[:token]}", 
+	  	'Accept' => 'application/json'}
 
-	if @repos_response.success?
-		@repos = JSON.parse(@repos_response.body)
+	if repos_resp.success?
+		@repos = JSON.parse(repos_resp.body)
 	else
 		@error = body["meta"]["errorDetail"]
 	end
@@ -16,10 +16,10 @@ class RepositoriesController < ApplicationController
 
   def create
 
-  	@repos_response = Faraday.post "https://api.github.com/user/repos" do |req|
-		req.params['oauth_token'] = session[:token]
-		req.body = "{name: #{params[:name]}}".to_json
-	end
+  	@repos_response = Faraday.post "https://api.github.com/user/repos", 
+	  	{name: params[:name]}.to_json, 
+	  	{'Authorization' => "token #{session[:token]}", 
+	  	'Accept' => 'application/json'}
 
 	redirect_to root_path
 
