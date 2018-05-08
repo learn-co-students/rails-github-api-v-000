@@ -1,7 +1,12 @@
 class RepositoriesController < ApplicationController
   def index
+
+    repo_resp = Faraday.get("https://api.github.com/user/repos", {}, {'Authorization'=> "token #{session[:token]}", 'Accept' => 'application/json'})
+    @repositories = JSON.parse(repo_resp.body)
   end
 
   def create
+    resp = Faraday.post("https://api.github.com/user/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}"})
+    redirect_to root_path
   end
 end
