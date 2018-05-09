@@ -11,22 +11,14 @@ class ApplicationController < ActionController::Base
       redirect_uri = CGI.escape('http://localhost:3000/auth')
       scope = 'repo'
       github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=#{scope}"
-      binding.pry
-      redirect_to github_url unless logged_in?
-        # make sure to pass in the scope parameter (`repo` scope should be appropriate for what we want to do) in step of the auth process!
-      # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
+      redirect_to github_url unless logged_in? 
+      #   # make sure to pass in the scope parameter (`repo` scope should be appropriate for what we want to do) in step of the auth process!
+      # # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
     end
 
     def logged_in?
-      !!session[:token]
+      !!session[:token] 
     end
 
-    def current_user
-      resp = Faraday.get("https://api.github.com/user") do |req|
-        req.params['access_token'] = session[:token]["access_token"]
-        req.params['token_type'] = session[:token]["token_type"]
-      end
-      body = JSON.parse(resp.body)
-    end
   
 end
