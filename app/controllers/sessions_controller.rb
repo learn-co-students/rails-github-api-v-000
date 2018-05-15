@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
       req.params['client_id'] = ENV['GITHUB_CLIENT_ID']
       req.params['client_secret'] = ENV['GITHUB_CLIENT_SECRET']
       req.params['code'] = params[:code]
-      binding.pry
       # req.params['redirect_uri'] = "http://localhost:3000/auth"
       req.headers['Accept'] = "application/json"
     end
@@ -18,8 +17,6 @@ class SessionsController < ApplicationController
       req.headers['Accept'] = "application/json"
     end
     session[:current_user] = JSON.parse(user_resp.body)
-    binding.pry
-
     redirect_to root_path
   end
 
