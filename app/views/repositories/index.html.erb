@@ -1,6 +1,7 @@
 <div class = "container">
-  <h1>Repos</h1>
+  <h1><%=@username%>'s Repos</h1>
   <!-- List repositories here! -->
+  <%= render collection: @repos, partial: "repo" %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
