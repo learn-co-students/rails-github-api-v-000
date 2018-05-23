@@ -9,10 +9,10 @@
 
 <div>
   <table>
-    <caption class='center'>
-      <%= link_to_if p_avail?('prev'), "<", root_path(page: p(@links)['prev']), class:'large' %>
-      <span class='large'><%= current_page %></span>
-      <%= link_to_if p_avail?('next'), ">", root_path(page: p(@links)['next']), class:'large' %>
+    <caption class='center large'>
+      <%= link_to_if p_avail?('prev'), "<", root_path(page: p(@links)['prev']) %>
+      <span><%= current_page %></span>
+      <%= link_to_if p_avail?('next'), ">", root_path(page: p(@links)['next']) %>
     </caption>
     <thead>
       <th>ID</th>
