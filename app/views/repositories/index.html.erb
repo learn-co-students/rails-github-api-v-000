@@ -1,7 +1,6 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
-  <% binding.pry %>
   <h1><%= session[:username] %></h1>
   <% @repos.each do |repo| %>
     <%= repo["name"] %><br>
