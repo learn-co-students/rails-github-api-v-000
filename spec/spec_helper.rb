@@ -32,4 +32,11 @@ RSpec.configure do |config|
   end
 end
 
-WebMock.disable_net_connect!(allow_localhost: true)
+# WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.allow_net_connect!(allow_localhost: true)
+
+
+# stub_request(:post, "https://api.github.com/user/repos").
+#       with(:body => {"{\"name\":\"a-new-repo\"}"=>nil},
+#       :headers => {'Authorization'=>'token 1'}).
+#       to_return(:status => 200, :body => "", :headers => {})
