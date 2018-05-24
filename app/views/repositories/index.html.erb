@@ -1,7 +1,7 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
-  <%= @repo %>
+  <h1><%= @repos.first["owner"]["login"] %></h1>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
