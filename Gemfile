@@ -29,6 +29,8 @@ gem 'pry'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-github'
 
 #Testing
 group :test do
