@@ -1,5 +1,8 @@
 require_relative '../spec_helper'
 
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
+
 describe "authentication" do
   it "displays the username on the page" do
     visit '/auth?code=20'
