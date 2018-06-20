@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    your_username: <%= @current_user %>
+  </header>
 
 <%= yield %>
 
