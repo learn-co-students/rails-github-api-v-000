@@ -1,8 +1,8 @@
 <div class = "container">
-  <h1>Repos</h1>
+ <h1>Session <%= session[:token] %></h1>
   <h1><%= session[:username] %>'s Repos</h1>
   <% @repos_array.each do |repo| %>
-    <%= repo["name"] %><br>
+    <%= repo %><br>
   <% end %>
   <!-- List repositories here! -->
 
