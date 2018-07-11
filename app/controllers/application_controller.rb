@@ -8,11 +8,10 @@ class ApplicationController < ActionController::Base
   private
 
     def authenticate_user
-      #https://github.com/login/oauth/authorize
-      #client_id = ENV['FOURSQUARE_CLIENT_ID']
-      #redirect_uri = CGI.escape("http://localhost:3000/auth")
-      #foursquare_url = "https://foursquare.com/oauth2/authenticate?client_id=#{client_id}&response_type=code&redirect_uri=#{redirect_uri}"
-      #redirect_to foursquare_url unless logged_in?
+      client_id = ENV['GITHUB_CLIENT']
+      redirect_uri = CGI.escape("http://localhost:3000/auth")
+      github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}&scope=`repo`"
+      redirect_to github_url unless logged_in?
 
       # make sure to pass in the scope parameter (`repo` scope should be appropriate for what we want to do) in step of the auth process!
       # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
