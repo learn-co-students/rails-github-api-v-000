@@ -21,7 +21,7 @@ class RepositoriesController < ApplicationController
         'name' => params['name']
       }.to_json
     end
-
+    
     redirect_to root_path
   end
 end
