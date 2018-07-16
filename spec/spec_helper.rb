@@ -21,9 +21,14 @@ RSpec.configure do |config|
       :headers => {'Accept'=>'application/json'}).
       to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
+      # stub_request(:post, "https://github.com/login/oauth/access_token?client_id=3f9c243f98a07a13cbd2&client_secret=ae9fd6a11216fd07f0080f17cc17dcd052f5761c&code=20").with(:headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Content-Length'=>'0', 'User-Agent'=>'Faraday v0.9.1'}).to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
+
+
     stub_request(:get, "https://api.github.com/user").
       with(:headers => {'Authorization'=>'token 1'}).
       to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
+
+      # stub_request(:get, "https://api.github.com/user?oauth_token=1").with(:headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Faraday v0.9.1'}).to_return(:status => 200, :body => {"login"=>"your_username"}, :headers => {})
 
     stub_request(:post, "https://api.github.com/user/repos").
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
