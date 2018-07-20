@@ -10,7 +10,7 @@
   <% end %>
 
   <% if @repos %>
-    <h1> <%= @repos[0]['owner']['login'] %>'s Repos </h1>
+    <h1> <%= @user['login'] %>'s Repos </h1>
       <% @repos.each do |repo| %>
         <div>
           <%= link_to repo['name'], repo['html_url'] %>
