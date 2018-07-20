@@ -1,3 +1,4 @@
+
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
@@ -6,5 +7,17 @@
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
+  <% end %>
+
+  <% if @repos %>
+    <h1> <%= @repos[0]['owner']['login'] %>'s Repos </h1>
+      <% @repos.each do |repo| %>
+        <div>
+          <%= link_to repo['name'], repo['html_url'] %>
+          <%= content_tag :p, repo['description'] %>
+        </div>
+      <% end %>
+  <% elsif @error %>
+    <p> <%= @error %> </p>
   <% end %>
 </div>
