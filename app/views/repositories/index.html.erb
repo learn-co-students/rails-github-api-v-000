@@ -1,6 +1,17 @@
+
+<h4>your_username = <%= @username %></h4>
+
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories here! -->
+  <div>
+    <% @repos.each do |repo| %>
+      <li>
+        Name : <%= repo['full_name'] %>
+        <a href="<%= repo['html_url'] %>">Link to Repo</a>
+      </li>
+    <% end %>
+  </div>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
