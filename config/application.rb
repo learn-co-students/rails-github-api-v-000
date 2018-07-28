@@ -22,5 +22,7 @@ module GithubDemo
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-  end
+    config.web_console.whitelisted_ips = '216.227.82.247'
+    config.web_console.development_only = false
+end
 end
