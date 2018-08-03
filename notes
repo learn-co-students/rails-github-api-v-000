@@ -15,3 +15,7 @@ CREATE ACTION IN FORM ON INDEX PAGE: utilize create action in RepositoriesContro
   1.
 
 PAGINATION:  &per_page=100   add to the url of the request
+
+
+JSON::ParserError in SessionsController#create
+ 784: unexpected token at 'access_token=717c37eeaf7a622e&scope=repo&token_type=bearer'
