@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
       # make sure to pass in the scope parameter (`repo` scope should be appropriate for what we want to do) in step of the auth process!
       # https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/#web-application-flow
 
-      # client_id = ENV['FOURSQUARE_CLIENT_ID']
+      client_id = ENV['GITHUB_CLIENT']
+      redirect_to "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=repo" if !logged_in
       # redirect_uri = CGI.escape("http://localhost:3000/auth")
-      # foursquare_url = "https://foursquare.com/oath2/authenticate?client_id=#{client_id}&response_type=code&redirect_uri=#{redirect_uri}"
-      # redirect_to foursquare_url unless logged_in?
+
     end
 
     def logged_in?
