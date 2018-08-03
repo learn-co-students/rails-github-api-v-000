@@ -1,6 +1,6 @@
 class RepositoriesController < ApplicationController
   def index
-    # resp = Faraday.get("https://api.foursquare.com/v2/lists/self/tips") do |req|
+    # resp = Faraday.get("https://api.github.com/user/repos?page=2&per_page=20") do |req|
     #   req.params['oauth_token'] = session[:token]
     #   req.params['v'] = '20160201'
     # end

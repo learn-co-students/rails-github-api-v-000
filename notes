@@ -12,4 +12,6 @@ INDEX PAGE: access github to display current user's list of repositories
     c.  check out pagination and see if you can get that to work with the repo results
 
 CREATE ACTION IN FORM ON INDEX PAGE: utilize create action in RepositoriesController
-  1.    
+  1.
+
+PAGINATION:  &per_page=100   add to the url of the request
