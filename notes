@@ -1,0 +1,21 @@
+INDEX PAGE: access github api to display current user's username
+  1.  need to make sure OAUTH works
+  2.  query the API for data
+  3.  use the response to
+  4.  display the username (owner.login I think if I'm remembering correctly)
+  5.  will need a current_user method and also need to authenticate as a before_action
+
+INDEX PAGE: access github to display current user's list of repositories
+  1.  display a list of the current user's repositories
+    a.  iterate of the repos and create an entry for each, then append to the DOM
+    b.  need  a <div id="repositories">, which is what will be altered
+    c.  check out pagination and see if you can get that to work with the repo results
+
+CREATE ACTION IN FORM ON INDEX PAGE: utilize create action in RepositoriesController
+  1.
+
+PAGINATION:  &per_page=100   add to the url of the request
+
+
+JSON::ParserError in SessionsController#create
+ 784: unexpected token at 'access_token=717c37eeaf7a622e&scope=repo&token_type=bearer'
