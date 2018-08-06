@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/auth' => 'sessions#create'
+  get '/callback' => 'sessions#create'
   post '/repositories/create' => 'repositories#create'
+  get '/logout' => 'sessions#logout'
   root 'repositories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
