@@ -5,7 +5,7 @@
 
   <% if @repos %>
     <% @repos.each do |repo| %>
-      <strong>Name: </strong><%= repo %><br>
+      <strong>Name: </strong><%= repo['name'].to_s %><br>
     <% end %>
   <% end %>
 
