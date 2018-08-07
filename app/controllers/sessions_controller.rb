@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-   skip_before_action :authenticate_user, only: :create
+   skip_before_action :authenticate_user
    def create
      resp = Faraday.post('https://github.com/login/oauth/access_token', {
        :client_id => ENV['CLIENT_ID'],
