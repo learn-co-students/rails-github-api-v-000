@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_user
 
   def create
-    resp = Faraday.post('https://github.com/login/oauth/access_token',
+    resp = Faraday.get('https://github.com/login/oauth/access_token',
       {
         :client_id => ENV['CLIENT_ID'], 
         :client_secret => ENV['CLIENT_SECRET'],
