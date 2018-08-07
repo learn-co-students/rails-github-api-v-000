@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/auth' => 'sessions#create'
-  post '/repositories/create' => 'repositories#create'
+  post '/repositories/create', to: 'repositories#create'
   root 'repositories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
