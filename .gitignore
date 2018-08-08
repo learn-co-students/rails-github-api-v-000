@@ -16,5 +16,5 @@
 /log/*
 !/log/.keep
 /tmp
-
+.env
 Gemfile.lock
