@@ -66,19 +66,24 @@ parameter.
     params appended to the end of the URL (i.g.
     `https://github.com/login/oauth/access_token?client_id=...`). However, it is
     generally best for security to not send IDs, secrets and tokens this way.
-    Instead, for GitHub, we can actually include our Client ID, Secret and code as
-    part of the body of the request.
+    Instead, we typically send this content in request headers or in the body.
 
-```ruby
-response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
-  req.body = { 'client_id': client_id, 'client_secret': client_secret, 'code': code }
-  req.headers['Accept'] = 'application/json'
-end
-```
+    For GitHub, we will include our Client ID, Secret and code as
+    part of the body of the request:
 
-If the credentials are correct, GitHub will send back an access token. After
-parsing the response, set `session[:token]` to the provided token. Finally,
-in `create`, redirect to our root path.
+    ```ruby
+    response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
+      req.body = { 'client_id': client_id, 'client_secret': client_secret, 'code': code }
+      req.headers['Accept'] = 'application/json'
+    end
+    ```
+
+    Notice here, we are also including an 'Accept' header, as well. In this
+    case, we are telling GitHub's server that we will accept JSON as a response.
+
+    If the credentials are correct, GitHub will send back an access token. After
+    parsing the response, set `session[:token]` to the provided token. Finally,
+    in `create`, redirect to our root path.
 
 5.  When we are routed to `repositories#index`, our root path,
     `authenticate_user` is called again. This time, however, since there is now a
