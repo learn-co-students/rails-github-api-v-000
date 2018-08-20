@@ -3,7 +3,7 @@ class RepositoriesController < ApplicationController
   skip_before_action :authenticate_user
 
   def index
-    resp = Faraday.get('https://api.github.com/purnima-nyc/repos') do |req|
+    resp = Faraday.get('http://api.github.com/purnima-nyc/repos') do |req|
       req.params['oauth_token'] = session[:token]
       #req.params['v'] = '3'
     end
@@ -14,7 +14,7 @@ class RepositoriesController < ApplicationController
 
 
   def create
-    resp = Faraday.post("https://api.github.com/purnima-nyc/repos") do |req|
+    resp = Faraday.post("http://api.github.com/purnima-nyc/repos") do |req|
       req.params['oauth_token'] = session[:token]
       #req.params['v'] = '3'
       req.params['name'] = params[:name]
