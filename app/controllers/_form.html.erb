@@ -1,0 +1,18 @@
+<% if @show.errors.any? %>
+    <%= error_helper(@show) %>
+    <%= error_list(@show) %>
+  </div>
+<% end %>
+<%= form_for @show do |f| %>
+  <%= f.label :show_title %>
+  <%= f.text_field :show_title %><br><br>
+  <%= f.label 'Choose a Watchlist' %>
+  <%= f.collection_select :watchlist_id, current_user.watchlists, :id, :title %><br><br>
+  <%= f.radio_button :show_type, 'Series'%>
+  <%= f.label 'Series' %>
+  <%= f.radio_button :show_type, 'Movie' %>
+  <%= f.label 'Movie' %><br><br>
+  <%= f.label 'Choose a genre' %>
+  <%= f.select :genre, ['Action', 'Comedy', 'Drama', 'Documentary', 'Animation', 'Other'] %><br><br>
+  <%= f.submit %>
+<% end %>
