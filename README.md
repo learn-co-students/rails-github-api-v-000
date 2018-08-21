@@ -1,7 +1,8 @@
 # Working with APIs
 
 In this lab, we're going to dive into GitHub's OAuth functionality and build our
-own OAuth Rails application. Refer to [this tutorial][tutorial] and the [Github OAuth documentation][oauthdoc] as you work through this lab.
+own OAuth Rails application. Refer to [this tutorial][tutorial] and the
+[Github OAuth documentation][oauthdoc] as you work through this lab.
 
 - `http://localhost:3000` is visited. _Before_ a user is routed to something like
   `repositories#index` and a view, _if the user is not logged in_, the application
@@ -14,8 +15,10 @@ own OAuth Rails application. Refer to [this tutorial][tutorial] and the [Github 
   controller, we use the Client ID and Client Secret, as well as the `code` param
   by sending them in a POST back to GitHub. If this information is correct, GitHub
   will respond with an `access_token`.
-- By including the `access_token` on GitHub API requests, we can now access
-  account and repository information and even create repositories!
+- By including the `access_token` on GitHub API requests from our code, GitHub knokws
+  we are making authenticated requests and lets us do more things. We can now access
+  account and repository information and even create repositories on behalf of logged-in
+  users!
 
 ## Objectives
 
@@ -30,6 +33,8 @@ own OAuth Rails application. Refer to [this tutorial][tutorial] and the [Github 
 2.  Create a `.env` file where you can store your unique ID and Secret as
     `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. While there, include a third
     environment variable, `GITHUB_USERNAME` and include your own account name.
+    We put important secrets in this file. The `dotenv` gem reads this file, finds
+    out our secrets and securely passes them to our Rails app.
 
 3.  Our Rails application will need to mimic GitHub's OAuth web application flow.
     The following routes are provided:
@@ -40,7 +45,7 @@ post '/repositories/create' => 'repositories#create'
 root 'repositories#index'
 ```
 
-A user should visiting `http://localhost:3000/` will be routed to the root path.
+A user visiting `http://localhost:3000/` will be routed to the root path.
 Before `repositories#index` can be invoked, we want to check if the user is
 authenticated. Write `authenticate_user` and `logged_in?` methods in
 `application_controller.rb` that will be called before every action. In
