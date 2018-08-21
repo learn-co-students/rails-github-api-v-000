@@ -84,18 +84,26 @@ parameter.
     Notice here, we are also including an 'Accept' header, as well. In this
     case, we are telling GitHub's server that we will accept JSON as a response.
 
-    If the credentials are correct, GitHub will send a response that contains an
-    access token unique to this specific request. Whenever data is sent from an
-    API or any sort of web server, it is sent in the form of a string. So in the
-    above code, `response` is set to whatever string GitHub sends back to us.
+    If the credentials are correct, GitHub will send a response that includes
+    headers and a body. Within the body is an access token unique to this specific
+    request.
 
-    Before we can get data from this string, we will need to convert it to a hash
+    As is the case whenever data is sent from an API or web server, the response
+    body is sent in the form of a string. Before we can get data from this
+    string, we will need to parse it into a hash:
 
-    We
-    are going to need this token whenever we sent API requests, so the best
+    ```ruby
+    body = JSON.parse(response.body)
+    ```
+
+    The above code parses the response body into a Ruby hash and stores this
+    hash as the `body` variable. Whatever key value pairs were sent by GitHub
+    will now be available, including `body['access_token']`.
+
+    We will need this token whenever we send API requests, so the best
     place to store this would be with in `session`. Setting something like
-    `session[:token]` to be equal to the parsed `'access_token'` value will allow
-    us to access the token in other controllers.
+    `session[:token]` to be equal to the parsed `'access_token'` value will
+    allow us to access the token in other controllers.
 
     After parsing and storing the token as a value in `session`, redirect to our
     root path at the end of the `create` method.
