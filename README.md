@@ -31,10 +31,8 @@ own OAuth Rails application. Refer to [this tutorial][tutorial] and the
     Once set up, you will be provided a Client ID and Client Secret.
 
 2.  Create a `.env` file where you can store your unique ID and Secret as
-    `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. While there, include a third
-    environment variable, `GITHUB_USERNAME` and include your own account name.
-    We put important secrets in this file. The `dotenv` gem reads this file, finds
-    out our secrets and securely passes them to our Rails app.
+    `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. The `dotenv` gem will read this
+    file, finds out our secrets and securely passes them to our Rails app.
 
 3.  Our Rails application will need to mimic GitHub's OAuth web application flow.
     The following routes are provided:
@@ -86,22 +84,27 @@ parameter.
     Notice here, we are also including an 'Accept' header, as well. In this
     case, we are telling GitHub's server that we will accept JSON as a response.
 
-    If the credentials are correct, GitHub will send back an access token. After
-    parsing the response, set `session[:token]` to the provided token. Finally,
-    in `create`, redirect to our root path.
+    If the credentials are correct, GitHub will send back an access token. We
+    are going to need this token whenever we sent API requests, so the best
+    place to store this would be with in `session`. Setting something like
+    `session[:token]` to be equal to the parsed `'access_token'` value will allow
+    us to access the token in other controllers.
+
+    After parsing and storing the token as a value in `session`, redirect to our
+    root path at the end of the `create` method.
 
 5.  When we are routed to `repositories#index`, our root path,
     `authenticate_user` is called again. This time, however, since there is now a
     `session[:token]`, the user will not redirected and our
     `repositories/index.html.erb` file will be displayed.
 
-6.  Calling the GitHub API from within `repositories#index`, retrieve and display
+6.  Call the GitHub API from within `repositories#index` to retrieve and display
     the current user's 'login' in `repositories/index.html.erb`.
 
-7.  Calling the API a second time using `https://api.github.com/user/repos`, get
-    and display a list of repositories on `repositories/index.html.erb`. Displaying
-    only the first page of results is fine; feel free to tackle pagination as a
-    bonus.
+7.  Call the API a second time using `https://api.github.com/user/repos` to
+    retrieve and display a list of repositories on `repositories/index.html.erb`.
+    Displaying only the first page of results is fine; feel free to tackle
+    pagination as a bonus.
 
 **BONUS:** Implement a `create` action in your `RepositoriesController` so that the form on
 `index.html.erb` successfully creates a new repository for the current user. The
