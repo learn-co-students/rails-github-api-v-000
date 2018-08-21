@@ -84,7 +84,14 @@ parameter.
     Notice here, we are also including an 'Accept' header, as well. In this
     case, we are telling GitHub's server that we will accept JSON as a response.
 
-    If the credentials are correct, GitHub will send back an access token. We
+    If the credentials are correct, GitHub will send a response that contains an
+    access token unique to this specific request. Whenever data is sent from an
+    API or any sort of web server, it is sent in the form of a string. So in the
+    above code, `response` is set to whatever string GitHub sends back to us.
+
+    Before we can get data from this string, we will need to convert it to a hash
+
+    We
     are going to need this token whenever we sent API requests, so the best
     place to store this would be with in `session`. Setting something like
     `session[:token]` to be equal to the parsed `'access_token'` value will allow
