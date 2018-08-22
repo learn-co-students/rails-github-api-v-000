@@ -4,10 +4,11 @@ class SessionsController < ApplicationController
   def create
     token = params["access_token"]
     response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
-      req.body = { 'client_id': client_id, 'client_secret': client_secret, 'code': code }
+      req.body = { 'client_id': GITHUB_CLIENT_ID, 'client_secret': GITHUB_CLIENT_SECRET, 'code': code }
       req.headers['Accept'] = 'application/json'
     end
     body = JSON.parse(resp.body)
     session[:token] = body[:access_token]
     redirect_to root_path
 end
+end 
