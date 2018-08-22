@@ -29,7 +29,7 @@ gem 'pry'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
-
+gem 'oauth'
 #Testing
 group :test do
   gem 'rspec-rails'
