@@ -1,3 +1,11 @@
+<%= @user["login"] %>
+
+<ul>
+  <% @repoList.each do |repo| %>
+    <li><%= repo["name"] %></li>
+  <% end %>
+</ul>
+
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
