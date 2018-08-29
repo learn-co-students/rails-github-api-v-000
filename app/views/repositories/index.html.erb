@@ -8,3 +8,9 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+<%= @username %><br>
+<h3>Repos</h3>
+<% @repo_body.each do |body| %>
+<%= body["name"] %>
+<a href="<%= body["html_url"] %>"><%= body["html_url"] %></a>
+<% end %>
