@@ -2,12 +2,11 @@
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
 
-  <h3>User: <% @user %></h3>
+  <h3>User: <%= session[:username] %></h3>
 
   <ul>
     <% @repos.each do |r| %>
-      binding.pry
-      <%= r["name"] + r["html_url"] %>
+      <%= r["name"] %>
     <% end %>  
   </ul>
 

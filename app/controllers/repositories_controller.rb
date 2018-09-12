@@ -5,15 +5,11 @@ class RepositoriesController < ApplicationController
       req.headers["Authorization"] = "token" + session[:token]
       req.headers["Accept"] = 'application/json'
     end
-
     @repos = JSON.parse(repos.body)
+  end
 
-    auth_user = Faraday.get("https://api.github.com/user") do |req|
-      req.headers["Authorization"] = "token" + session[:token]
-      req.headers["Accept"] = 'application/json'
-    end
-
-    user_hash = JSON.parse(auth_user.body)
-    @user = user_hash["login"]
+  def create
+    response = Faraday.post "https://api.github.com/user/repos", {name: params[:name]}.to_json, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}  
+    redirect_to '/'
   end
 end
