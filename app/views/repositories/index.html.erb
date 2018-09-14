@@ -2,9 +2,19 @@
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
 
+  <h3>User: <%= session[:username] %></h3>
+
+  <ul>
+    <% @repos.each do |r| %>
+      <%= r["name"] %>
+    <% end %>  
+  </ul>
+
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
-</div>
+
+
+
