@@ -15,7 +15,7 @@ own OAuth Rails application. Refer to [this tutorial][tutorial] and the
   controller, we use the Client ID and Client Secret, as well as the `code` param
   by sending them in a POST back to GitHub. If this information is correct, GitHub
   will respond with an `access_token`.
-- By including the `access_token` on GitHub API requests from our code, GitHub knokws
+- By including the `access_token` on GitHub API requests from our code, GitHub knows
   we are making authenticated requests and lets us do more things. We can now access
   account and repository information and even create repositories on behalf of logged-in
   users!
