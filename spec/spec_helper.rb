@@ -8,6 +8,7 @@ require 'capybara/rspec'
 require 'webmock/rspec'
 require 'rack_session_access/capybara'
 
+
 RSpec.configure do |config|
   config.include Capybara::DSL
 
@@ -17,9 +18,9 @@ RSpec.configure do |config|
       to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
 
     stub_request(:post, "https://github.com/login/oauth/access_token").
-      with(:body => {"client_id"=> ENV["GITHUB_CLIENT_ID"], "client_secret"=> ENV["GITHUB_CLIENT_SECRET"], "code"=>"20"},
-      :headers => {'Accept'=>'application/json'}).
-      to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
+       with(:body => {"client_id"=> "bf2371881819842c05f9", "client_secret"=> "18d6272921a685e5f2d6b5910b6f26d73c611bfd", "code"=>"20"},
+       :headers => {'Accept'=>'application/json'}).
+       to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
     stub_request(:get, "https://api.github.com/user").
       with(:headers => {'Authorization'=>'token 1'}).
