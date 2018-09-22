@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
-    return if logged_in?
-
     client_id = ENV['GITHUB_CLIENT_ID']
     session[:github_state] = SecureRandom.hex(32)
 
@@ -18,10 +16,10 @@ class ApplicationController < ActionController::Base
     girl << "client_id=#{client_id}" << "&"
     girl << "state=#{session[:github_state]}"
 
-    redirect_to girl
+    redirect_to girl unless logged_in?
   end
 
   def logged_in?
-    !!session[:github_token]
+    !!session[:token]
   end
 end
