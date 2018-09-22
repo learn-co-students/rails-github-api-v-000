@@ -8,8 +8,18 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    client_id = ENV['GITHUB_CLIENT_ID']
+    session[:github_state] = SecureRandom.hex(32)
+
+    girl = github_identity_request_url = ""
+    girl << "https://github.com/login/oauth/authorize?"
+    girl << "client_id=#{client_id}" << "&"
+    girl << "state=#{session[:github_state]}"
+
+    redirect_to girl unless logged_in?
   end
 
   def logged_in?
+    !!session[:token]
   end
 end
