@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user
+  skip_before_action :authenticate_user, only: :create
+  require 'pry'
 
   def create
     #this is where we make a request to github for a token to use. this token will be stored in session and then user will be logged_in
@@ -8,12 +9,14 @@ class SessionsController < ApplicationController
     client_id = ENV['GITHUB_CLIENT_ID']
     client_secret = ENV['GITHUB_SECRET']
     code = params[:code]
-    response = Faraday.post("https://github.com/login/oauth/access_token") do |req|
+    #binding.pry
+    response = Faraday.post "https://github.com/login/oauth/access_token" do |req|
+      #binding.pry
       req.body = { 'client_id': client_id, 'client_secret': client_secret, 'code': code }
       req.headers['Accept'] = 'application/json'
     end
     # parse the response from a string to a hash so we can get the data out
-    binding.pry
+    
     body = JSON.parse(response.body)
 
     #log the user in with session
