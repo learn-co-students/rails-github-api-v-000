@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     #github oauth workflow documentation tells us to make a POST and to send the params via the response header/body. 
     #we also send an accept param stating we would like the response in json
     client_id = ENV['GITHUB_CLIENT_ID']
-    client_secret = ENV['GITHUB_SECRET']
+    client_secret = ENV['GITHUB_CLIENT_SECRET']
     code = params[:code]
     #binding.pry
     response = Faraday.post "https://github.com/login/oauth/access_token" do |req|

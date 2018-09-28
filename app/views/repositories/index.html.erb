@@ -4,7 +4,8 @@
   <p> Username: <%= @username %> </p>
   <ul>
   <% @repos.each do |repo| %>
-    <li><%= repo["name"] %> </li>
+    <% binding.pry %>
+    <li><%= repo.name %> </li>
     <% end %> 
   </ul>
 
