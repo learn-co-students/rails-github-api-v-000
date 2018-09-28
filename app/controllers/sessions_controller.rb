@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+  # We are routed to this action via the localhost.com/auth route. We are only routed here because GITHub sent us back here after succesful login/credentials on gihubs website. 
+  # so at this point we are already logged in to github, but we haven't recieved the token we need to to be an AUTHORIZED USER. 
+
+  # we are skipping the authenticate_user action because we ALREADY went to Githbu to login and we don't need to go again! If we didn't skip, we would be stuck in a continous loop. 
+  
   skip_before_action :authenticate_user, only: :create
   require 'pry'
 
