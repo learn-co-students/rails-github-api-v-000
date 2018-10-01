@@ -33,6 +33,7 @@ gem 'dotenv-rails'
 #Testing
 group :test do
   gem 'rspec-rails'
+  gem 'pry'
   gem 'capybara'
   gem 'rack_session_access'
   gem 'webmock'
