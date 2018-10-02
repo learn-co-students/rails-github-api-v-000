@@ -1,6 +1,14 @@
 <div class = "container">
-  <h1>Repos</h1>
-  <!-- List repositories and display username here! -->
+  <h1>Repos for <%= @login %>:</h1>
+  <% if @repositories.size > 0 %>
+    <ul>
+      <% @repositories.each do |repository| %>
+        <li><%= "#{repository['name']}" %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Looks like you don't have any Github repositories yet.</p>
+  <% end %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
