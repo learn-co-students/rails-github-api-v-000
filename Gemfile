@@ -33,9 +33,10 @@ gem 'dotenv-rails'
 #Testing
 group :test do
   gem 'rspec-rails'
+  gem 'pry'
   gem 'capybara'
   gem 'rack_session_access'
-  gem 'webmock'
+  gem 'webmock', require: false
 end
 
 # Use ActiveModel has_secure_password

@@ -1,10 +1,17 @@
 <div class = "container">
+    <h1><%= @login %></h1>
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
-
+  <% @repos.each do |repo| %>
+        <p>By: <%=  repo['owner']['login'] %></p>
+        <%= link_to repo['name'], repo['html_url']  %>
+        <br>
+        <br>
+  <% end %>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+<!-- https://github.com/zacwillmington/test -->
