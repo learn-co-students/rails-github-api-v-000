@@ -3,8 +3,9 @@
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
   <% @repos.each do |repo| %>
-  
-        <p><%=  repo['full_name'] %></p>
+        <p>By: <%=  repo['owner']['login'] %></p>
+        <%= link_to repo['name'], repo['html_url']  %>
+        <br>
         <br>
   <% end %>
   <%= form_tag("/repositories/create", method: "post") do %>
@@ -13,3 +14,4 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+<!-- https://github.com/zacwillmington/test -->
