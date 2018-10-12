@@ -5,7 +5,6 @@ class RepositoriesController < ApplicationController
       token = session[:token]
       req.body = {'oauth_token': token}
     end
-    end
 
     @user = JSON.parse(user_resp.body)
 
