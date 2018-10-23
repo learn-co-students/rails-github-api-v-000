@@ -6,10 +6,8 @@ class RepositoriesController < ApplicationController
     body = JSON.parse(resp.body)
     @username = body["login"]
 
-
     repos_resp = Faraday.get("https://api.github.com/user/repos?access_token=#{access_token}")
     @repos = JSON.parse(repos_resp.body)
-    #binding.pry
     render 'index'
   end
 
