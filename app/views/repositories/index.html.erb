@@ -3,7 +3,7 @@
   <!-- List repositories and display username here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
-    <%= label_tag(:name, "Create a New Repo:") %>
+    <%= label_tag(:name, "Create a New Repo for #{@username}:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
