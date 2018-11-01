@@ -7,4 +7,11 @@
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
+
+  <h3><%= @login %></h3>
+  <ol>
+    <% @repo_body.collect do |repo| %>
+      <li><%= repo["name"] %></li>
+    <% end %>
+  </ol>
 </div>
