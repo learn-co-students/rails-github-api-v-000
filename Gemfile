@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
@@ -27,8 +27,7 @@ gem 'figaro'
 gem 'pry'
 # Use Faraday for GET and POST
 gem 'faraday'
-# Dot-env
-gem 'dotenv-rails'
+
 
 #Testing
 group :test do
