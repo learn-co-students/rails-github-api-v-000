@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       }
       req.headers['Accept'] = 'application/json'
     end
-    binding.pry
+    
     body = JSON.parse(response.body)
     session[:token] = body['access_token']
 
