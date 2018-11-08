@@ -7,4 +7,13 @@
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
+
+  <%= @username %>
+  <ul>
+    <% @repos.each do |repo| %>
+      <li>
+        <%= repo['name'] %>
+      </li>
+    <% end %>
+  </ul>
 </div>
