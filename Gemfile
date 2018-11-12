@@ -26,6 +26,7 @@ gem 'figaro'
 # Use Pry for testing
 gem 'pry'
 # Use Faraday for GET and POST
+gem 'rb-readline'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
