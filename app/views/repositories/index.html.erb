@@ -2,8 +2,10 @@
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
 <div>
-  <%= @user_data %>
-  <%= @repo_data %>
+  <h1><%= @user_data["login"] %></h1><br />
+  <%= @repo_data.each do |repo| %>
+  <%= link_to repo["name"], "https://www.github.com/#{@user_data["login"]}/#{repo["name"]}" %><br>
+    <% end %>
 </div>
 
   <%= form_tag("/repositories/create", method: "post") do %>
