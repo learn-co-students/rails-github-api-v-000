@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  #This mimics the Github's OAuth web application Flow
   get '/auth' => 'sessions#create'
   post '/repositories/create' => 'repositories#create'
   root 'repositories#index'
