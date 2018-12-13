@@ -6,10 +6,11 @@
 <% if @repos %>
 <ul>
   <% @repos.each do |repo| %>
-  <li><%= repo["name"] %><br></li>
+  <li><a href=<%= repo["html_url"] %>><%= repo["name"] %></a></li><br>
   <% end %>
 </ul>
 <% end %>
+
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>

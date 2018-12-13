@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     body = JSON.parse(response.body)
     #binding.pry
     session[:token] = body["access_token"]
+    #binding.pry
     redirect_to root_path
   end
 
