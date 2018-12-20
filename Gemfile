@@ -30,6 +30,8 @@ gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
 
+gem 'dotenv'
+
 #Testing
 group :test do
   gem 'rspec-rails'
@@ -46,7 +48,7 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'dotenv-rails', groups: [:development, :test]
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
