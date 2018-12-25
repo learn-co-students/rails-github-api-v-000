@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/auth' => 'sessions#create'
+  get "/login/oauth/authorize" => 'repositories#whuttheheck'
   post '/repositories/create' => 'repositories#create'
   root 'repositories#index'
 

@@ -1,20 +1,25 @@
 class RepositoriesController < ApplicationController
-  skip_before_action :authenticate_user
+  # skip_before_action :authenticate_user
 
   def index
     user = Faraday.get("https://api.github.com/user") do |req|
-      req.headers['Authorization'] = 'token' + session[:token]
+      req.headers['Authorization'] = 'token ' + session[:token]
       req.headers['Accept'] = 'application/json'
     end
   
     @user_data = JSON.parse(user.body)
   
     repos = Faraday.get("https://api.github.com/user/repos") do |req|
-      req.headers['Authorization'] = 'token' + session[:token]
+
+      req.headers['Authorization'] = 'token ' + session[:token]
       req.headers['Accept'] = 'application/json'
-    
-    @repo_data = JSON.parse(repo.body)
     end
+   
+    @repo_data = JSON.parse(repos.body)
+  end
+
+  def whuttheheck
+    session.clear
   end
 
   def create
