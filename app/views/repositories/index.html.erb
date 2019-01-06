@@ -5,7 +5,7 @@
   <ul>
   <% @repo_data.each do |repo| %>
   <li>
-    <%= repo['name'] %>
+    <%= link_to repo['name'], repo['html_url'] %>
     <% end %>
   </li>
 </ul>
