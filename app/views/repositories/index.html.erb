@@ -2,6 +2,12 @@
   <h1> <%= @repo_owner['login'] %>'s Repos</h1>
   <!-- List repositories and display username here! -->
 
+  <%= form_tag("/repositories/create", method: "post") do %>
+    <%= label_tag(:name, "Create a New Repo:") %>
+    <%= text_field_tag(:name, nil, id: "new-repo") %>
+    <%= submit_tag("Create") %>
+  <% end %>
+
   <ul>
   <% @repo_data.each do |repo| %>
   <li>
@@ -10,9 +16,5 @@
   </li>
 </ul>
 
-  <%= form_tag("/repositories/create", method: "post") do %>
-    <%= label_tag(:name, "Create a New Repo:") %>
-    <%= text_field_tag(:name, nil, id: "new-repo") %>
-    <%= submit_tag("Create") %>
-  <% end %>
+
 </div>
