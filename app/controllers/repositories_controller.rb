@@ -2,6 +2,7 @@ class RepositoriesController < ApplicationController
 
   def index
     user = Faraday.get('https://api.github.com/user') do |req|
+      #the req.params worked in the browser also (instead of req.headers)
       # req.params['access_token'] = session[:token]
 
       req.headers['Authorization'] = 'token ' + session[:token]
@@ -10,6 +11,7 @@ class RepositoriesController < ApplicationController
       @repo_owner = JSON.parse(user.body)
 
     repos = Faraday.get('https://api.github.com/user/repos') do |req|
+      #the req.params worked in the browser also (instead of req.headers)
       # req.params['access_token'] = session[:token]
 
       req.headers['Authorization'] = 'token ' + session[:token]
