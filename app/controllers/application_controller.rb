@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
    redirect_to github_url unless logged_in?
   end
 
- 
-
   def logged_in?
     !!session[:token]
   end
