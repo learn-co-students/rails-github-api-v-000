@@ -8,3 +8,15 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+
+<h2>Displaying Repos for <%= @user["login"] %></h2>
+
+<% if @repos %>
+<ul>
+  <% i = 1 %>
+  <% @repos.each do |repo| %>
+    <li>Repo <%= i %> <%= repo["full_name"] %></li>
+    <% i += 1 %>
+  <% end %>
+</ul>
+<% end %>
