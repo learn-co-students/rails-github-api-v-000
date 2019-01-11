@@ -8,8 +8,13 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    if !logged_in?
+      auth_uri = "https://github.com/login/oauth/authorize?client_id=#{ENV["GITHUB_CLIENT_ID"]}"
+      redirect_to auth_uri
+    end
   end
 
   def logged_in?
+    !!session[:token]
   end
 end
