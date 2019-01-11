@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
       req.body = {
         'client_id': ENV["GITHUB_CLIENT_ID"], 
         'client_secret': ENV["GITHUB_CLIENT_SECRET"],
-        'scope': "user repo",
         'code': params[:code]
       }
       req.headers['Accept'] = 'application/json'
