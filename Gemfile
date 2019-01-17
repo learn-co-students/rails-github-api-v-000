@@ -29,6 +29,8 @@ gem 'pry'
 gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
+gem 'thin'
+gem 'rb-readline'
 
 #Testing
 group :test do
