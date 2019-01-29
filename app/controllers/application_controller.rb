@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    client_id = ENV['CLIENT_ID']
+    foursquare_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}"
+    redirect_to foursquare_url unless logged_in?
   end
 
   def logged_in?
+    !!session[:token]
   end
 end
