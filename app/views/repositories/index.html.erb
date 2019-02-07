@@ -8,3 +8,11 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+
+
+<%= @user_info['login'] %>
+<% @repos_info.each do |r|%>
+  <p>
+  <%= r['name'] %>
+  </p>
+<% end %>
