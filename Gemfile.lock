@@ -216,6 +216,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  dotenv
   dotenv-rails
   faraday
   figaro
@@ -235,4 +236,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.2
+   1.16.6
