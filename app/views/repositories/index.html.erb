@@ -2,11 +2,11 @@
 <div class = "container">
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
-  <h3><%= @user_info['login'] %></h3>
+  <h3><%= @user_info["login"] %></h3>
 
-  <% @repo_info.each do |repo| %>
+  <% @repo_info.each do |r| %>
     <p>
-      <%= repo["name"] %>
+       <%= link_to r["name"], "https://www.github.com/#{@user_info["login"]}/#{r["name"]}" %>
     </p>
   <% end %>
 
