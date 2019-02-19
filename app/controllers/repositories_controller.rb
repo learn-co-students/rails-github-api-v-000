@@ -1,15 +1,27 @@
 class RepositoriesController < ApplicationController
   
   def index
+  user = Faraday.get("https://github.com/user") do |user|
+binding.pry
+  end
+      resp = Faraday.get("https://github.com/user/repos") do |req|
+        # binding.pry
+        req.params['oauth_token'] = session[:token]
+      end
+     
+# binding.pry
+      @name = JSON.parse(resp.body)  
+      # binding.pry
+      # ["response"]["friends"]["items"]
   end
 
   def create
 
     client_id = ENV['GITHUB_CLIENT_ID']
+  
     client_secret = ENV['GITHUB_CLIENT_SECRET']
 
     @resp = Faraday.post 'https://api.github.com/user/repos' do |req|
-      binding.pry
 
       req.params['client_id'] = client_id
       req.params['client_secret'] = client_secret
