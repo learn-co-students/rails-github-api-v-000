@@ -1,18 +1,15 @@
+<% require 'pry' %>
+
 <div class = "container">
   <h1>Repos</h1>
-  <!-- List repositories and display username here! -->
+  <%= @user['login'] %>
   <div>
-    <% if @error %>
-      <p><%= @error %></p>
-      <% elsif @repos %>
-       <ul>
-         <% @repos.each do |repo| %>
-           <li>
-             <%= repo["name"] %><br>
-           </li>
-         <% end %>
-       </ul>
+    <% @repos.each do |repo| %>
+      <li>
+        <%= link_to repo["name"], repo["html_url"]%>  <br>
+       </li>
     <% end %>
+
   </div>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
