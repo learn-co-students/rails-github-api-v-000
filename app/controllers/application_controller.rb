@@ -8,8 +8,16 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    #if !logged_in?
+      client_id = ENV['GITHUB_CLIENT_ID']
+      redirect_to `https://github.com/login/oauth/authorize?client_id=${client_id}&scope=repo` unless logged_in?
+    # else
+    #   redirect_to controller: :sessions, action: :create, method: :post
+    # end
   end
 
   def logged_in?
+    return !!session[:token]
   end
+
 end
