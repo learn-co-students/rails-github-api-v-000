@@ -10,5 +10,15 @@
 </div>
 
 #  it will need a route that comes into it...
+ <%= @name %>
 
 
+<% if @results.size > 0 %>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= "#{result['Name']} #{friend['lastName']}" %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Looks like you don't have any foursquare friends yet.</p>
+<% end %>

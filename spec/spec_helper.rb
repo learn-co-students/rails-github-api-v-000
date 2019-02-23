@@ -59,7 +59,9 @@ RSpec.configure do |config|
         body: {"client_id"=>"db262a0bdcb734f7e655", "client_secret"=>"73a26bd44c3b5da291f3af26346030d5312c00ec", "code"=>"20"},
         headers: {
        'Accept'=>'application/json'
-        })
+        }).
+            to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
+
     stub_request(:get, "https://api.github.com/user/repos").
       with(
         headers: {
