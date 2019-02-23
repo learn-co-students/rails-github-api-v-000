@@ -12,24 +12,64 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   config.before(:each) do
-    stub_request(:get, "https://api.github.com/user/repos").
-      with(:headers => {'Authorization'=>'token 1'}).
-      to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
+    # stub_request(:get, "https://api.github.com/user/repos").
+    #   with(:headers => {'Authorization'=>'token 1'}).
+    #   to_return(:status => 200, :body => [{"name" => "Repo 1", "html_url" => "http://link1.com"}, {"name" => "Repo 2", "html_url" => "http://link2.com"}, {"name" => "Repo 3", "html_url" => "http://link3.com"}].to_json, :headers => {})
 
-    stub_request(:post, "https://github.com/login/oauth/access_token").
-      with(:body => {"client_id"=> ENV["GITHUB_CLIENT_ID"], "client_secret"=> ENV["GITHUB_CLIENT_SECRET"], "code"=>"20"},
-      :headers => {'Accept'=>'application/json'}).
-      to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
+    # stub_request(:post, "https://github.com/login/oauth/access_token").
+    #   with(:body => {"client_id"=> ENV["GITHUB_CLIENT_ID"], "client_secret"=> ENV["GITHUB_CLIENT_SECRET"], "code"=>"20"},
+    #   :headers => {'Accept'=>'application/json'}).
+    #   to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
-    stub_request(:get, "https://api.github.com/user").
-      with(:headers => {'Authorization'=>'token 1'}).
-      to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
+    # stub_request(:get, "https://api.github.com/user").
+    #   with(:headers => {'Authorization'=>'token 1'}).
+    #   to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
 
+    # stub_request(:post, "https://api.github.com/user/repos").
+    #   with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
+    #   :headers => {'Authorization'=>'token 1'}).
+    #   to_return(:status => 201, :body => "", :headers => {})
+
+    #   stub_request(:post, "https://github.com/login/oauth/access_token").
+    #   with(
+    #     body: {"GITHUB_CLIENT_ID"=>"db262a0bdcb734f7e655", "GITHUB_CLIENT_SECRET"=>"73a26bd44c3b5da291f3af26346030d5312c00ec"},
+    #     headers: {
+    #    'Accept'=>'application/json',
+    #    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    #    'Content-Type'=>'application/x-www-form-urlencoded',
+    #    'User-Agent'=>'Faraday v0.15.2'
+    #     }).
+    #   to_return(status: 200, body: "", headers: {})
+  
+    # registered a_request stubs:
+  
     stub_request(:post, "https://api.github.com/user/repos").
-      with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
-      :headers => {'Authorization'=>'token 1'}).
-      to_return(:status => 201, :body => "", :headers => {})
+      with(
+        body: {"{\"name\":\"a-new-repo\"}"=>true},
+        headers: {
+       'Authorization'=>'token 1'
+        })
+    stub_request(:get, "https://api.github.com/user").
+      with(
+        headers: {
+       'Authorization'=>'token 1'
+        })
+    stub_request(:post, "https://github.com/login/oauth/access_token").
+      with(
+        body: {"client_id"=>"db262a0bdcb734f7e655", "client_secret"=>"73a26bd44c3b5da291f3af26346030d5312c00ec", "code"=>"20"},
+        headers: {
+       'Accept'=>'application/json'
+        }).
+            to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
+
+    stub_request(:get, "https://api.github.com/user/repos").
+      with(
+        headers: {
+       'Authorization'=>'token 1'
+        })
+  
+
   end
 end
 
-WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.allow_net_connect!(allow_localhost: true)
