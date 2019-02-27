@@ -30,12 +30,14 @@ gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
 
+gem 'rb-readline'
+
 #Testing
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'rack_session_access'
-  gem 'webmock'
+  gem 'webmock', require: false
 end
 
 # Use ActiveModel has_secure_password
