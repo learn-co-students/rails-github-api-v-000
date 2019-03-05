@@ -1,7 +1,7 @@
 <div class = "container">
   <h1>Repos</h1>
-  <!-- List repositories and display username here! -->
-    <%= @user["login"] if !!@user%>
+  <!-- List repositories and display your_username here! -->
+    <%= @user["login"] %>
     <h3>User's Repos:</h3>
     <% @repos.each do |r| %>
         <%= link_to r["name"], "https://www.github.com/#{@user["login"]}/#{r["name"]}" %></br>
