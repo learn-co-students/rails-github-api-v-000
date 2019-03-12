@@ -1,12 +1,18 @@
 <div class = "container">
   <h1>Repos</h1>
-  <h3>by: <%= @body_hash[0]['owner']['login'] %></h3>
-  <br />
+  <!-- List repositories and display username here! -->
+<strong><%= @user_info.first[1] %></strong>
 
-  <% @body_hash.each do |repo| %>
-    <%= repo['name'] %><br />
-  <% end %>
-  <br />
+
+  <ol>
+    <% @repo_info.each do |data| %>
+      <li><%= data['name'] %></li>
+    <% end %>
+  </ol>
+
+
+
+
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
