@@ -1,6 +1,11 @@
 <div class = "container">
   <h1>Repos</h1>
+  <%= @user_data['login'] %>
+<br>
   <!-- List repositories and display username here! -->
+  <% @repo_data.each do |r|%>
+  <ul><%= link_to r['name'],"https://www.github.com/#{@user_data["login"]}/#{r["name"]}" %></ul>
+  <% end %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
