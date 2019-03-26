@@ -34,7 +34,7 @@ gem 'dotenv-rails'
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'rack_session_access'
+#  gem 'rack_session_access'
   gem 'webmock'
 end
 
@@ -48,6 +48,8 @@ end
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rack_session_access'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -57,3 +59,5 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+gem 'octokit'
