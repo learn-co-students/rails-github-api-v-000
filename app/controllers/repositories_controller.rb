@@ -3,20 +3,10 @@ class RepositoriesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    resp = Faraday.get "https://api.github.com/user" do |req|
-      req.params['access_token'] = session[:token]
-      req.headers['Accept'] = 'application/json'
-    end
-    body = JSON.parse(resp.body)
-    @username = body["login"]
+    resp = Faraday.get "https://api.github.com/user/repos", {}, {"Authorization" => "token #{session[:token]}", "Accept" => "application/json"}
+    @repos = JSON.parse(resp.body)
 
-
-    repo_resp = Faraday.get "https://api.github.com/user/repos" do |req|
-      req.params['access_token'] = session[:token]
-      req.headers['Accept'] = 'application/json'
-    end
-    @repos = JSON.parse(repo_resp.body)
-
+    @username = session[:username]
 
     # client = Octokit::Client.new(:access_token => session[:token])
     # @repos = client.repos
@@ -31,19 +21,8 @@ class RepositoriesController < ApplicationController
 
 
   def create
-    client_id = ENV['GITHUB_CLIENT_ID']
-    client_secret = ENV['GITHUB_CLIENT_SECRET']
-    access_token = session[:token]
+    resp = Faraday.post "https://api.github.com/user/repos", {}, {"Authorization" => "token #{session[:token]}", "name" => params[:name], "Accept" => "application/json"}
 
-    post_repo_resp = Faraday.post "https://api.github.com/user/repos" do |req|
-      req.body = { 'access_token': access_token, 'name': params[:name].to_json }
-      req.headers['Accept'] = 'application/json'
-
-      # req.params['client_id'] = ENV['GITHUB_CLIENT_ID']
-      # req.params['client_secret'] = ENV['GITHUB_CLIENT_SECRET']
-      # req.params['access_token'] = session[:token]
-      # req.params['name'] = params[:name].to_json
-    end
     redirect_to '/'
   end
 
