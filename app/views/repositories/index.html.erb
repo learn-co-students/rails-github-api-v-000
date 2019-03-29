@@ -1,7 +1,30 @@
 <div class = "container">
-  <h1>Repos</h1>
+  <h1>Index Page</h1>
+  <br>
   <!-- List repositories and display username here! -->
+  <br>
+    <p><%= @username %>'s Repos</p>
+  <br>
+  <br>
+  <div>
+    <% if @repos %>
+      <strong>Here are all of your repos:</strong>
+      <br>
+      <br>
+      <% @repos.each do |repo| %>
+      <em><%= repo["name"] %></em>
+        <br>
+        <br>
+      <% end %>
 
+      <%= (link_to "prev page", @prev_page_href) if @prev_page_href %>
+      <%= (link_to "next page", @next_page_href) if @next_page_href %>
+
+    <% else %>
+      <p>Looks like you don't have any GitHub repos yet!</p>
+    <% end %>
+  </div>
+  <br>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
