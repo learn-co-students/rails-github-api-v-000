@@ -1,3 +1,6 @@
+
+#require 'rails_helper'
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
@@ -7,6 +10,9 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'webmock/rspec'
 require 'rack_session_access/capybara'
+
+
+
 
 RSpec.configure do |config|
   config.include Capybara::DSL
@@ -29,7 +35,13 @@ RSpec.configure do |config|
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
+
+
+
+
+      #WebMock.disable_net_connect!(allow_localhost: true)
   end
+  #WebMock.disable_net_connect!(allow_localhost: true)
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
