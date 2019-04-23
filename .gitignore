@@ -2,6 +2,8 @@
 
 .DS_Store
 
+.env
+
 ### Node ###
 # Logs
 logs
