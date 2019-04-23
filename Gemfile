@@ -34,7 +34,6 @@ gem 'dotenv-rails'
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'rack_session_access'
   gem 'webmock'
 end
 
@@ -50,6 +49,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rack_session_access'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
