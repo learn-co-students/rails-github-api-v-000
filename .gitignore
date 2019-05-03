@@ -35,6 +35,8 @@ jspm_packages
 # Ignore bundler config.
 /.bundle
 
+.env
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
