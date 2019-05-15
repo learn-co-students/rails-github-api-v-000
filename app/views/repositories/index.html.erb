@@ -1,6 +1,29 @@
 <div class = "container">
-  <h1>Repos</h1>
-  
+    <h1>Repos</h1>
+  <div>
+
+      <ul>
+        <li>
+        your_username  <%= @body["login"] %><br>
+        </li>
+        </ul>
+
+
+
+
+      <ul>
+        <% @body_2.each do |rep| %>
+          <li>
+            <%= rep["name"] %><br>
+          </li>
+
+      </ul>
+    <% end %>
+
+  </div>
+
+
+
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
