@@ -8,3 +8,9 @@
     <%= submit_tag("Create") %>
   <% end %>
 </div>
+<%= session[:username] %>
+<% if @results %>
+<% @results.each do |res| %>
+  <%=res["name"]%>
+<% end %>
+<% end %>
