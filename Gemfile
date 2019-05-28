@@ -30,6 +30,9 @@ gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
 
+gem 'pry'
+gem 'rb-readline'
+
 #Testing
 group :test do
   gem 'rspec-rails'
