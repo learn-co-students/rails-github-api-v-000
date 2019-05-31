@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'thin', '~> 1.7', '>= 1.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
