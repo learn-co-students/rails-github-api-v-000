@@ -6,7 +6,7 @@ own OAuth Rails application. Refer to [this tutorial][tutorial] and the
 
 - `http://localhost:3000` is visited. _Before_ a user is routed to something like
   `repositories#index` and a view, _if the user is not logged in_, the application
-  controller redirects the user to GitHub to provide their identity.
+  controller redirects gmathe user to GitHub to provide their identity.
 - On successfully confirmation of identity, GitHub redirects the user based on the
   'Authorization callback URL' provided when the OAuth application was created. In
   our case, back to `http://localhost:3000/auth`. GitHub passes along a `code`
