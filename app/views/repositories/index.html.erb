@@ -8,10 +8,10 @@
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
-  <h3 style="text-align:left; text-decoration:underline">Repositories</h3>
   <ul>
   <% @repos.each do |repo| %>
-    <li style="list-style-position:inside; text-align:left"><%= repo %></li>
+    <li style="list-style-position:inside"><%= repo %></li>
   <% end %>
   </ul>
+  
 </div>

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     unless logged_in? 
        @response = Faraday.get "https://github.com/login/oauth/authorize" do | headers | 
-          headers.params["client_id"] = ENV["client_id"]
+          headers.params["client_id"] = ENV["GITHUB_CLIENT_ID"]
           headers.params["redirect_uri"] = "#{ENV.fetch("server_address")}/auth"
           headers.params["scope"] = "user"
        end.to_hash
@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end 
 
   def logged_in?
-    !session[:token].nil? && session[:token] != "redirect_uri_mismatch"
+    !session[:token].nil? && session[:token] != "redirect_uri_mismatch" && session[:token] != "bad_verification_code"
   end
 end
