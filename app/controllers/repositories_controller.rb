@@ -1,16 +1,14 @@
 class RepositoriesController < ApplicationController
 
   def index
-    resp = Faraday.get("https://api.github.com/user/repos") do |req|
-      req.params['oauth_token'] = session[:token]
-
+    user_resp = Faraday.get("https://api.github.com/user") do |req|
+      req.body = { 'Authorization' => `token #{session[:token]}` }
+      req.headers['Accept'] = 'application/json'
     end
-    @username = JSON.parse(resp.body)["response"]["friends"]["items"]
+    @username = JSON.parse(user_resp.body)["login"]
 
-    resp = Faraday.get("https://api.github.com/user/repos") do |req|
-      req.params['oauth_token'] = session[:token]
-    end
-    @repos = JSON.parse(resp.body)["response"]["repositories"]
+    resp = Faraday.get "https://api.github.com/user/repos", {}, {'Authorization' => "token #{session[:token]}", 'Accept' => 'application/json'}
+    @repos = JSON.parse(resp.body)
   end
 
 end
