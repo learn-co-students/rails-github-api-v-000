@@ -2,6 +2,7 @@
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
   <h3>User: <%= @user_data %></h3>
+  
   <h3><%= @user_data %>'s Repos:</h3>
   <% @repo_data.each do |r| %>
   	<%= link_to r["name"], "https://www.github.com/#{@user_data["login"]}/#{r["name"]}" %>   
