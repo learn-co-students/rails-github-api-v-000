@@ -2,7 +2,9 @@
   <h1><%= @login %></h1>
   <h1>Repos</h1>
 <ul>
- <li><%= @resp %></li>
+  <% @repos.each do |repo| %>
+ <li><%= repo.name %></li>
+ <% end %>
  </ul>
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
