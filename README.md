@@ -31,7 +31,7 @@ own OAuth Rails application. Refer to [this tutorial][tutorial] and the
     Once set up, you will be provided a Client ID and Client Secret.
 
 2.  Create a `.env` file where you can store your unique ID and Secret as
-    `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. The `dotenv` gem will read this
+    `GITHUB_CLIENT` and `GITHUB_SECRET`. The `dotenv` gem will read this
     file, finds out our secrets and securely passes them to our Rails app.
 
 3.  Our Rails application will need to mimic GitHub's OAuth web application flow.
