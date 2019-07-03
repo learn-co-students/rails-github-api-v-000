@@ -145,6 +145,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     rdoc (4.3.0)
     regexp_parser (1.3.0)
     rspec-core (3.8.0)
@@ -230,6 +231,7 @@ DEPENDENCIES
   pry
   rack_session_access
   rails
+  rb-readline
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -241,4 +243,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
