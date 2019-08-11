@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user
 
   private
-
-
+  
   def authenticate_user
    client_id = ENV['CLIENT_ID']
    redirect_uri = CGI.escape("http://localhost:3000/auth")
