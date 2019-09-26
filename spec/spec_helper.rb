@@ -21,14 +21,19 @@ RSpec.configure do |config|
       :headers => {'Accept'=>'application/json'}).
       to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
+
+
     stub_request(:get, "https://api.github.com/user").
       with(:headers => {'Authorization'=>'token 1'}).
       to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
+
+
 
     stub_request(:post, "https://api.github.com/user/repos").
       with(:body => {"{\"name\":\"a-new-repo\"}"=>true},
       :headers => {'Authorization'=>'token 1'}).
       to_return(:status => 201, :body => "", :headers => {})
+
   end
 end
 
