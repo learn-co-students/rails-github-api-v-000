@@ -9,9 +9,9 @@
   <% end %>
 
   <ul>
-    <% @repos.each do |repo| %>
+    <% @repos.each_with_index do |repo, i| %>
       <li>
-        <h3><a href="<%= repo["html_url"] %>"><%= repo["full_name"] %></a></h3>
+        <h3>Repo <%= i+1 %> - <a href="<%= repo["html_url"] %>"><%= repo["full_name"] %></a></h3>
         <p><%= repo["description"] %></p>
       </li>
     <% end %>

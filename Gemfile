@@ -55,7 +55,7 @@ group :development, :test do
   gem 'spring'
 end
 
-group :development do
+group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
 end
