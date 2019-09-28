@@ -1,5 +1,5 @@
 <div class = "container">
-  <h1>Repos</h1>
+  <h1><%= @user %> Repos</h1>
   <!-- List repositories and display username here! -->
 
   <%= form_tag("/repositories/create", method: "post") do %>
@@ -7,4 +7,15 @@
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
+
+  <ul>
+    <% @repos.each do |repo| %>
+      <li>
+        <h3><a href="<%= repo["html_url"] %>"><%= repo["full_name"] %></a></h3>
+        <p><%= repo["description"] %></p>
+      </li>
+    <% end %>
+  </ul>
+
+
 </div>
