@@ -30,6 +30,8 @@ gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
 
+gem 'web-console', '~> 2.0'
+
 #Testing
 group :test do
   gem 'rspec-rails'
@@ -55,7 +57,7 @@ group :development, :test do
   gem 'spring'
 end
 
-group :development do
+# group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-end
+  # gem 'web-console', '~> 2.0'
+# end
