@@ -1,0 +1,22 @@
+<div class = "container">
+  <h1>Repos</h1>
+  <!-- List repositories and display username here! -->
+  <p><%= @login %></p>
+  <%= form_tag("/repositories/create", method: "post") do %>
+    <%= label_tag(:name, "Create a New Repo:") %>
+    <%= text_field_tag(:name, nil, id: "new-repo") %>
+    <%= submit_tag("Create") %>
+  <% end %>
+</div>
+<% if @repo %>
+<ul>
+    <% @repo.each do |repo| %>
+      <li>
+        <%= @login %><br>
+        <%= link_to repo["html_url"], repo["html_url"] %><br>
+
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
