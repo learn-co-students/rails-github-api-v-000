@@ -21,6 +21,17 @@ RSpec.configure do |config|
       :headers => {'Accept'=>'application/json'}).
       to_return(:status => 200, :body => {"access_token"=>"1"}.to_json, :headers => {})
 
+    # stub_request(:post, "https://github.com/login/oauth/access_token").
+    # with(
+    #   body: {"client_id"=>"c260e4cd3536542cefd1", "client_secret"=>nil, "code"=>"20"},
+    #   headers: {
+    #  'Accept'=>'application/json',
+    #  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    #  'Content-Type'=>'application/x-www-form-urlencoded',
+    #  'User-Agent'=>'Faraday v0.15.4'
+    #   }).
+    # to_return(status: 200, body: "", headers: {})
+
     stub_request(:get, "https://api.github.com/user").
       with(:headers => {'Authorization'=>'token 1'}).
       to_return(:status => 200, :body => {"login"=>"your_username"}.to_json, :headers => {})
@@ -32,4 +43,5 @@ RSpec.configure do |config|
   end
 end
 
-WebMock.disable_net_connect!(allow_localhost: true)
+# WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.allow_net_connect!
