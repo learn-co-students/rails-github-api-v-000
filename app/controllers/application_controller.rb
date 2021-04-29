@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    !!session[:token]
   end
 
   def logged_in?
+    
   end
 end
