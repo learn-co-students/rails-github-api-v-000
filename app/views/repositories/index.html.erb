@@ -1,4 +1,4 @@
-<div class = "container">
+<div class="container">
   <h1>Repos</h1>
   <!-- List repositories and display username here! -->
 
@@ -7,4 +7,25 @@
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag("Create") %>
   <% end %>
+</div>
+
+<div class="user_info">
+  <br>
+  You are currently signed in as: <strong> <%= @user_info["login"] %> </strong>
+  <br>
+</div>
+
+<div class="repos">
+  <br>
+  Your repositories:
+  <br>
+  <br>
+  <ul>
+    <% @repos.each do |repo| %>
+      <li>
+        <a href="<%= repo["html_url"] %>"> <%= repo["name"] %> </a>
+        <p> <%= repo["description"] %>
+      </li>
+    <% end %>
+  </ul>
 </div>
