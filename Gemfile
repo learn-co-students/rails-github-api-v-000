@@ -30,6 +30,7 @@ gem 'faraday'
 # Dot-env
 gem 'dotenv-rails'
 
+
 #Testing
 group :test do
   gem 'rspec-rails'
