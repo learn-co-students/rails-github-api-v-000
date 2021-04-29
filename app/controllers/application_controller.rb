@@ -8,8 +8,13 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    client_id = "232b40885fd61b5cc4b4"
+    redirect_uri = CGI.escape("http://localhost:3000/auth")
+    github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}"
+    redirect_to github_url unless logged_in?
   end
 
   def logged_in?
+    !!session[:token]
   end
 end
