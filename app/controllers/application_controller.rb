@@ -7,9 +7,15 @@ class ApplicationController < ActionController::Base
 
   private
 
+    #can't get method to recognize ENV variables!
   def authenticate_user
+    client_id = '86b960e0d2f8aa862703'
+    redirect_uri = CGI.escape("http://localhost:3000/auth")
+    github_url = "https://github.com/login/oauth/authorize?client_id=#{client_id}&redirect_uri=#{redirect_uri}"
+    redirect_to github_url unless logged_in?
   end
 
   def logged_in?
+    !!session[:token]
   end
 end
