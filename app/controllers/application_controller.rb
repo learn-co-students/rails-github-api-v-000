@@ -8,8 +8,12 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    # if the user isn't logged in (i.g. no session token), we will redirect to GitHub
+    client_id = ENV['GITHUB_CLIENT_ID']
+    redirect_to "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=repo" unless logged_in?
   end
 
   def logged_in?
+    !!session[:token]
   end
 end
