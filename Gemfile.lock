@@ -218,6 +218,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pry
+  rack-test (~> 0.6.3)
   rack_session_access
   rails (~> 5.0)
   rspec-rails

@@ -36,6 +36,7 @@ group :test do
   gem 'capybara'
   gem 'rack_session_access'
   gem 'webmock'
+  # gem 'rack-test', '~> 0.6.3'
 end
 
 # Use ActiveModel has_secure_password
