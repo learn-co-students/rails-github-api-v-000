@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    #user authentication
   end
 
   def logged_in?
